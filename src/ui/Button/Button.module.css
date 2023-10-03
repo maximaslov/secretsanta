@@ -1,0 +1,60 @@
+.primaryButton {
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  padding: 8px 16px;
+  color: var(--button-primary-text);
+  background-color: var(--button-primary-bg);
+  border: var(--button-primary-border);
+  border: none;
+  font-size: var(--button-fontSize);
+  border-radius: var(--button-border-radius);
+}
+
+.primaryButton:hover,
+.primaryButton:focus-visible {
+  box-shadow: var(--button-primary-hover-shadow);
+}
+
+.primaryButton:active,
+.primaryButton:focus-visible:active {
+  box-shadow: var(--button-primary-active-shadow);
+}
+
+.secondaryButton {
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  padding: 8px 16px;
+  color: var(--button-secondary-text);
+  background-color: var(--button-secondary-bg);
+  border: var(--button-secondary-border);
+  font-size: var(--button-fontSize);
+  border-radius: var(--button-border-radius);
+}
+
+.secondaryButton:hover,
+.secondaryButton:focus-visible {
+  box-shadow: var(--button-secondary-hover-shadow);
+  background-color: var(--button-secondary-hover-bg);
+  color: var(--button-secondary-hover-text);
+}
+
+.secondaryButton:active,
+.secondaryButton:focus-visible:active {
+  box-shadow: var(--button-secondary-active-shadow);
+}
+
+.primaryButton:disabled,
+.secondaryButton:disabled {
+  background-color: var(--button-disabled-bg);
+  color: var(--button-disabled-color);
+  box-shadow: none;
+  cursor: not-allowed;
+}
+
+.primaryButton:focus-visible,
+.secondaryButton:focus-visible {
+  outline-color: var(--main-focus-visible-color);
+  outline-width: 2px;
+  outline-style: solid;
+  outline-offset: -1px;
+}
