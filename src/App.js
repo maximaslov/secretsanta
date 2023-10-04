@@ -1,7 +1,8 @@
+import React from "react";
 import "./App.css";
+import { LanguageProvider, MainProvider } from "./contexts";
 import { DynamicDocumentTitle } from "./components";
-import { LanguageProvider, MainProvider } from "./context";
-import { Button } from "./ui";
+import { Button, Checkbox, Heading, Input, MenuItem, Text } from "./ui";
 
 function App() {
   return (
@@ -12,13 +13,19 @@ function App() {
           style={{
             display: "flex",
             gap: "40px",
-            width: "500px",
+            width: "900px",
             margin: "100px auto",
+            alignItems: "center",
           }}
         >
-          <Button disabled>Hello</Button>
-          <Button onClick={() => console.log('click')}>Hello</Button>
+          <Input placeholder="Placeholder" />
+          <Checkbox labelText="Click me">Hello</Checkbox>
+          <Button>Hello</Button>
           <Button variant="secondary">Hello</Button>
+          <Text>Hello</Text>
+          <Text variant="md">Descriptions</Text>
+          <Heading>Hello</Heading>
+          <MenuItem label="Hello" />
         </div>
       </LanguageProvider>
     </MainProvider>

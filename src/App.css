@@ -9,37 +9,47 @@
   --main-accent-color: rgb(20 189 107);
   --main-white-color: #ffffff;
   --main-focus-visible-color: rgb(248, 70, 70);
+  --main-error-color: rgb(248, 70, 70);
+  --primary-background-color: #ffffff;
+  --secondary-background-color: #ebebeb;
+  --main-border-color:  #1ebe023e;
+
+    /* Text colors */
+  --primary-text-color: rgb(0 172 90);
+  --secondary-text-color: rgb(103 198 147);
+  --placeholder-text-color: rgba(215, 215, 215, 0.929);
 
   /* Radii */
   --primary-border-radius: 4px;
 
-  /* Text */
-  --primary-text-color: rgba(14, 78, 37, 0.831);
-  --secondary-text-color: rgb(68, 163, 70);
-  --placeholder-text-color: rgba(182, 179, 179, 0.194);
+  /* Font sizes */
+  --main-font-size: 18px;
+  --heading-font-size: 24px;
+  --description-font-size: 16px;
+  --ui-font-size: 18px;
 
   /* Inputs */
   --input-border: solid 1px var(--placeholder-text-color);
-  --input-active-border: solid 1px var(--button-primary-bg);
+  --input-active-border: solid 1px var(--main-accent-color);
 
   /* Buttons */
   --button-primary-text: #ffffff;
   --button-primary-bg: rgb(20 189 107);
   --button-primary-border: none;
+  --button-primary-hover-bg:  rgb(14, 153, 86);
   --button-primary-hover-shadow: 0px 1px 5px #6f6e6e66;
   --button-primary-active-shadow: inset 0px 0px 5px #00000040;
 
   --button-secondary-text: rgb(20 189 107);
   --button-secondary-hover-text: #ffffff;
   --button-secondary-bg: #ffffff;
-  --button-secondary-hover-bg: rgb(20 189 107);
+  --button-secondary-hover-bg: rgb(14, 153, 86);
   --button-secondary-border: solid 1px rgb(20 189 107);
   --button-secondary-hover-shadow: 0px 1px 5px #6f6e6e66;
   --button-secondary-active-shadow: inset 0px 0px 5px #00000040;
 
   --button-disabled-bg: rgb(228 228 228);
-  --button-disabled-color: #ffffff;
+  --button-disabled-color: #c7c4c4;
 
-  --button-fontSize: 15px;
   --button-border-radius: 2px;
 }

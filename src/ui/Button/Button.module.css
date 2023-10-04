@@ -6,13 +6,14 @@
   background-color: var(--button-primary-bg);
   border: var(--button-primary-border);
   border: none;
-  font-size: var(--button-fontSize);
+  font-size: var(--ui-font-size);
   border-radius: var(--button-border-radius);
 }
 
 .primaryButton:hover,
 .primaryButton:focus-visible {
   box-shadow: var(--button-primary-hover-shadow);
+  background-color: var(--button-primary-hover-bg);
 }
 
 .primaryButton:active,

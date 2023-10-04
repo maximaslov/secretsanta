@@ -1,0 +1,27 @@
+.menuItem {
+  list-style: none;
+  cursor: pointer;
+}
+
+.menuItem::after {
+    content: "";
+    display: block;
+    height: 1px;
+    background-color: transparent;
+}
+
+.menuItem:hover::after {
+    transition: all 0.3s ease;
+    animation: show 0.3s ease;
+    background-color: red;
+}
+
+@keyframes show {
+  0% {
+    width: 0px;
+  }
+
+  100% {
+    width: 100%;
+  }
+}

@@ -1,0 +1,63 @@
+.checkboxWrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.checkbox {
+  display: none;
+}
+
+.pseudoLabel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 20px;
+  min-width: 20px;
+  background-color: var(--primary-background-color);
+  border: 1px solid;
+  border-color: var(--placeholder-text-color);
+  cursor: pointer;
+  border-radius: var(--button-border-radius);
+  transition: all 0.3s ease;
+}
+
+.pseudoLabel:hover {
+  border-color: #1ebe023e;
+}
+
+.pseudoLabel:focus-visible {
+  outline: none;
+  border-color: var(--main-focus-visible-color);
+}
+
+.pseudoLabel:focus-visible::before {
+  background-color: #1ebe023e;
+}
+
+.pseudoLabel::before {
+  content: "";
+  display: block;
+  width: 16px;
+  height: 16px;
+  background-color: transparent;
+  border: 1px solid var(--primary-background-color) t;
+  border-radius: 1px;
+  transition: background-color 0.2s ease;
+}
+
+.pseudoLabel:hover::before {
+  background-color: #1ebe023e;
+}
+
+.checkbox:checked + .pseudoLabel {
+  border-color: var(--main-accent-color);
+}
+
+.checkbox:checked + .pseudoLabel::before {
+  background-color: var(--main-accent-color);
+}
+
+.label {
+  cursor: pointer;
+}

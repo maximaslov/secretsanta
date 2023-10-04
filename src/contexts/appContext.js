@@ -4,7 +4,9 @@ export const AppContext = createContext();
 
 const MainProvider = ({ children }) => {
     
-  const value = {};
+  const value = {
+    data: 23
+  };
 
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>;
 };
