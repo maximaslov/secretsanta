@@ -8,13 +8,22 @@
     transition: all 0.3s ease,
 }
 
+.input:hover {
+    border-color: var(--main-border-hover-color);
+}
+
 .input::placeholder {
     font-size: var(--ui-font-size);
     color: var(--placeholder-text-color);
+    transition: all 0.3s ease;
 }
 
-.input:focus-visible {
-    border-color: red;
+.input:hover::placeholder {
+    color: var(--main-border-hover-color);
+}
+
+.input:focus-visible::placeholder {
+    color: var(--main-border-hover-color);
 }
 
 .input:focus {

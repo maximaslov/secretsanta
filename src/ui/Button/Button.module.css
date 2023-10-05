@@ -30,6 +30,7 @@
   border: var(--button-secondary-border);
   font-size: var(--button-fontSize);
   border-radius: var(--button-border-radius);
+  min-height: 37px;
 }
 
 .secondaryButton:hover,

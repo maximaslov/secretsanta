@@ -1,19 +1,41 @@
 .menuItem {
   list-style: none;
   cursor: pointer;
+  width: fit-content;
+  transition: all 0.3s ease;
+  border: solid 1px transparent;
+}
+
+.activeMenuItem {
+  list-style: none;
+  width: fit-content;
+  border: solid 1px transparent;
+}
+
+.activeMenuItem::after {
+  content: "";
+    display: block;
+    height: 2px;
+    background-color: transparent;
+    width: 100%
+}
+
+.menuItem:focus-visible {
+  outline: 0;
+  border-color: var(--main-focus-visible-color);
 }
 
 .menuItem::after {
     content: "";
     display: block;
-    height: 1px;
+    height: 2px;
     background-color: transparent;
 }
 
 .menuItem:hover::after {
     transition: all 0.3s ease;
     animation: show 0.3s ease;
-    background-color: red;
+    background-color: var(--main-focus-visible-color);
 }
 
 @keyframes show {

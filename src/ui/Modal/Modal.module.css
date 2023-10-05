@@ -1,0 +1,80 @@
+.modalBackground {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.238);
+  backdrop-filter: blur(24px);
+  padding-top: 60px;
+  animation: showBg 0.5s linear;
+}
+
+.modalWrapper {
+  max-width: 900px;
+  width: 100%;
+  height: fit-content;
+  animation: showModal 0.3s ease;
+  position: relative;
+  padding: 0 16px;
+  overflow: hidden;
+}
+
+.contentWrapper {
+  overflow: auto;
+  max-height: 75vh;
+  padding: 0 36px;
+}
+
+.closeIcon {
+  top: 16px;
+  right: 32px;
+  cursor: pointer;
+  position: absolute;
+  border: none;
+  background: none;
+}
+
+.closeIcon svg path {
+  stroke: var(--button-primary-bg);
+  transition: stroke 0.3s ease;
+}
+
+.closeIcon:hover svg path {
+  stroke: var(--button-primary-hover-bg);
+}
+
+.closeIcon svg {
+  transition: all 0.3s ease;
+}
+
+.closeIcon:hover svg {
+  transform: scale(1.1);
+}
+
+.closeIcon:active svg {
+  transform: scale(1);
+}
+
+.additionalPadding {
+  width: 100%;
+  height: 36px;
+}
+
+@keyframes showBg {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes showModal {
+  0% {
+    transform: translate(0, -100%) scale(0);
+  }
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+}

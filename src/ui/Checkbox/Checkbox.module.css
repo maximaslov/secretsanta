@@ -23,7 +23,7 @@
 }
 
 .pseudoLabel:hover {
-  border-color: #1ebe023e;
+  border-color: var(--main-border-hover-color);
 }
 
 .pseudoLabel:focus-visible {
@@ -32,7 +32,7 @@
 }
 
 .pseudoLabel:focus-visible::before {
-  background-color: #1ebe023e;
+  background-color: var(--main-border-hover-color);
 }
 
 .pseudoLabel::before {
@@ -47,7 +47,7 @@
 }
 
 .pseudoLabel:hover::before {
-  background-color: #1ebe023e;
+  background-color: var(--main-border-hover-color);
 }
 
 .checkbox:checked + .pseudoLabel {

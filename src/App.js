@@ -1,10 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
-import { LanguageProvider, MainProvider } from "./contexts";
-import { DynamicDocumentTitle } from "./components";
-import { Button, Checkbox, Heading, Input, MenuItem, Text } from "./ui";
+import { LanguageProvider, MainProvider } from "contexts";
+import { DynamicDocumentTitle } from "components";
+import { Loader } from "ui";
 
 function App() {
+  const [showLoader, setShowLoader] = useState(true);
+  setTimeout(() => {
+    setShowLoader(false);
+  }, 3000);
+
+  if (showLoader) return <Loader />;
+
   return (
     <MainProvider>
       <LanguageProvider>
@@ -16,17 +23,9 @@ function App() {
             width: "900px",
             margin: "100px auto",
             alignItems: "center",
+            justifyContent: "center",
           }}
-        >
-          <Input placeholder="Placeholder" />
-          <Checkbox labelText="Click me">Hello</Checkbox>
-          <Button>Hello</Button>
-          <Button variant="secondary">Hello</Button>
-          <Text>Hello</Text>
-          <Text variant="md">Descriptions</Text>
-          <Heading>Hello</Heading>
-          <MenuItem label="Hello" />
-        </div>
+        ></div>
       </LanguageProvider>
     </MainProvider>
   );
