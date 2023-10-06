@@ -10,8 +10,11 @@
   --main-white-color: #ffffff;
   --main-focus-visible-color: rgb(248, 70, 70);
   --main-error-color: rgb(248, 70, 70);
+
   --primary-background-color: #ffffff;
   --secondary-background-color: #ebebeb;
+  --error-background-color: rgba(248, 70, 70, 0.3);
+
   --main-border-color:  rgba(215, 215, 215, 0.929);
   --main-border-hover-color:  rgba(33, 144, 11, 0.335);
 
@@ -22,6 +25,7 @@
 
   /* Effects */
   --primary-shadow: 0px 0px 35px 1px #6f6e6e26;
+  --error-shadow: 0px 0px 27px 2px #f5070726;
 
   /* Radii */
   --primary-border-radius: 4px;

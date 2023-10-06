@@ -1,23 +1,17 @@
-.menuItem {
-  list-style: none;
-  cursor: pointer;
-  width: fit-content;
-  transition: all 0.3s ease;
-  border: solid 1px transparent;
-}
-
+.menuItem,
 .activeMenuItem {
   list-style: none;
   width: fit-content;
   border: solid 1px transparent;
+  cursor: url('../../assets/img/pointer-cursor.png'), pointer;
 }
 
 .activeMenuItem::after {
   content: "";
-    display: block;
-    height: 2px;
-    background-color: transparent;
-    width: 100%
+  display: block;
+  height: 2px;
+  background-color: transparent;
+  width: 100%;
 }
 
 .menuItem:focus-visible {
@@ -26,24 +20,15 @@
 }
 
 .menuItem::after {
-    content: "";
-    display: block;
-    height: 2px;
-    background-color: transparent;
+  content: "";
+  display: block;
+  height: 2px;
+  background-color: transparent;
+  transition: all 0.3s ease;
+  width: 0;
+  background-color: var(--main-focus-visible-color);
 }
 
 .menuItem:hover::after {
-    transition: all 0.3s ease;
-    animation: show 0.3s ease;
-    background-color: var(--main-focus-visible-color);
-}
-
-@keyframes show {
-  0% {
-    width: 0px;
-  }
-
-  100% {
-    width: 100%;
-  }
+  width: 100%;
 }

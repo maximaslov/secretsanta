@@ -1,13 +1,25 @@
 .primaryPaper, .secondaryPaper {
     height: 100%;
+    width: fit-content;
     box-shadow: var(--primary-shadow);
     border-radius: var(--primary-border-radius);
 }
 
 .primaryPaper {
+    width: fit-content;
     background-color: var(--primary-background-color);
+}
+
+.errorPaper {
+    background-color: var(--error-background-color);
 }
 
 .secondaryPaper {
     background-color: var(--secondary-background-color);
 }
+
+.errorPaper {
+    border-radius: var(--primary-border-radius);
+    box-shadow: var(--error-shadow);
+}
+

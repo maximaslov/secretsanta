@@ -1,0 +1,33 @@
+.errorWrapper {
+  animation: showHide 4s ease-in-out;
+  position: absolute;
+  width: fit-content;
+  transform: translate(-50%, -400%);
+  left: 50%;
+}
+
+.error {
+  padding: 16px;
+}
+
+.errorText {
+  color: var(--main-error-color);
+}
+
+@keyframes showHide {
+  0% {
+    transform: translate(-50%, -400%);
+  }
+  20% {
+    transform: translate(-50%, -200%);
+  }
+  50% {
+    transform: translate(-50%, -200%);
+  }
+  80% {
+    transform: translate(-50%, -200%);
+  }
+  100% {
+    transform: translateY(-50%, -400%);
+  }
+}

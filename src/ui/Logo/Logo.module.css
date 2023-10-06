@@ -5,6 +5,7 @@
   font-family: "Norican", cursive;
   font-weight: 600;
   color: var(--main-focus-visible-color);
+  cursor: url('../../assets/img/main-cursor.png'), pointer;
 }
 
 .smallLogo {
@@ -42,7 +43,7 @@
     transform: scale(1);
   }
   50% {
-    transform: scale(1.1);
+    transform: scale(1.15);
   }
   100% {
     transform: scale(1);

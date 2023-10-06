@@ -10,7 +10,11 @@ const Text = ({ children, variant }) => {
     },
   };
 
-  return <p style={stylesVariant[variant]}>{children}</p>;
+  return (
+    <p style={{ width: "fit-content", ...stylesVariant[variant] }}>
+      {children}
+    </p>
+  );
 };
 
 Text.defaultProps = {

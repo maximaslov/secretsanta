@@ -4,6 +4,7 @@ const Paper = ({ variant, children }) => {
   const classVariants = {
     primary: styles.primaryPaper,
     secondary: styles.secondaryPaper,
+    error: styles.errorPaper,
   };
 
   const currentClass = classVariants[variant];

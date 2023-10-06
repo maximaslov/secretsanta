@@ -1,7 +1,11 @@
+import { useRef } from "react";
 import Text from "../Text";
 import styles from "./Checkbox.module.css";
 
 const Checkbox = ({ onChange, labelText }) => {
+
+  const labelRef = useRef()
+
   const handleChange = (event) => {
     onChange?.(event.target.checked);
     console.log(event.target.checked);
@@ -15,10 +19,11 @@ const Checkbox = ({ onChange, labelText }) => {
         type="checkbox"
         onChange={handleChange}
       />
-      <label tabIndex={0} className={styles.pseudoLabel} for="checkbox" />
-      <label className={styles.label}for="checkbox">
-        <Text>{labelText}</Text>
-      </label>
+     
+        <label ref={labelRef} tabIndex={0} className={styles.pseudoLabel} htmlFor="checkbox" />
+        <label ref={labelRef} className={styles.label} htmlFor="checkbox">
+          <Text>{labelText}</Text>
+        </label>
     </div>
   );
 };

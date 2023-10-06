@@ -1,6 +1,5 @@
 import { useAppContext } from "contexts";
 import { useEffect } from "react";
-// import { useAppContext } from "../../contexts/appContext";
 
 const DynamicDocumentTitle = () => {
   const { currentLanguage } = useAppContext();
@@ -11,7 +10,7 @@ const DynamicDocumentTitle = () => {
       document.title = "Санта";
     }
   }, [currentLanguage]);
-  return <div />;
+  return <></>;
 };
 
 export default DynamicDocumentTitle;

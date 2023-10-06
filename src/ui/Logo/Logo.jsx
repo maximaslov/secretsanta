@@ -4,7 +4,7 @@ const Logo = ({ text, size, withAnimation }) => {
   const classVariants = {
     sm: styles.smallLogo,
     md: styles.middleLogo,
-    lg: withAnimation ? styles.largeLogoGradient:  styles.largeLogo,
+    lg: withAnimation ? styles.largeLogoGradient : styles.largeLogo,
   };
 
   const currentClass = classVariants[size];

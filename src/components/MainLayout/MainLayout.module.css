@@ -1,0 +1,25 @@
+.mainLayout {
+  width: 100vw;
+  height: 100vh;
+  animation: show 1s ease;
+  background: url("../../assets/img/background.jpeg");
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  cursor: url('../../assets/img/main-cursor.png'), pointer;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@keyframes show {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
