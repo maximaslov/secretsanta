@@ -22,7 +22,7 @@ const Checkbox = ({ onChange, labelText }) => {
      
         <label ref={labelRef} tabIndex={0} className={styles.pseudoLabel} htmlFor="checkbox" />
         <label ref={labelRef} className={styles.label} htmlFor="checkbox">
-          <Text>{labelText}</Text>
+          <Text variant="md">{labelText}</Text>
         </label>
     </div>
   );

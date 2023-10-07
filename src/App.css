@@ -31,10 +31,10 @@
   --primary-border-radius: 4px;
 
   /* Font sizes */
-  --main-font-size: 18px;
+  --main-font-size: 16px;
   --heading-font-size: 24px;
-  --description-font-size: 16px;
-  --ui-font-size: 18px;
+  --description-font-size: 15px;
+  --ui-font-size: 16px;
 
   /* Inputs */
   --input-border: solid 1px var(--placeholder-text-color);

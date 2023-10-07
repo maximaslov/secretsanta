@@ -38,7 +38,7 @@ function App() {
               padding: "16px",
             }}
           >
-            <Paper>
+            {/* <Paper>
               <div
                 style={{
                   padding: "24px",
@@ -54,7 +54,7 @@ function App() {
                 <Checkbox labelText="Check me" />
                 <Button>Create new company</Button>
               </div>
-            </Paper>
+            </Paper> */}
           </div>
         </MainLayout>
       </LanguageProvider>
