@@ -51,13 +51,7 @@
   background-color: var(--main-border-hover-color);
 }
 
-.labelWrapper:hover .pseudoLabel::before {
-  background-color: var(--main-border-hover-color);
-}
-
-
-
-.label:hover .pseudoLabel::before {
+.label:hover + .pseudoLabel{
   background-color: var(--main-border-hover-color);
 }
 

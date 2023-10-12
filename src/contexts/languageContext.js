@@ -18,6 +18,19 @@ const LanguageProvider = ({ children }) => {
     storedLanguage ?? DEFAULT_LANGUAGE
   );
 
+  const setLanguage = (language) => {
+    setCurrentLanguage(language);
+    localStorage.setItem("language", language);
+  };
+
+  const switchLanguage = () => {
+    if (currentLanguage === "en") {
+      setLanguage("uk");
+    } else {
+      setLanguage("en");
+    }
+  };
+
   const loadTranslations = useCallback(async () => {
     const translationModule = await import(`../lang/${currentLanguage}.json`);
     setTranslations(translationModule.default);
@@ -27,12 +40,9 @@ const LanguageProvider = ({ children }) => {
     loadTranslations();
   }, [loadTranslations]);
 
-  const languages = ["en", "uk"];
-
   const value = {
     currentLanguage,
-    setCurrentLanguage,
-    languages,
+    switchLanguage,
     translations,
   };
 

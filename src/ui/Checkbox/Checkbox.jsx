@@ -3,8 +3,7 @@ import Text from "../Text";
 import styles from "./Checkbox.module.css";
 
 const Checkbox = ({ onChange, labelText }) => {
-
-  const labelRef = useRef()
+  const labelRef = useRef();
 
   const handleChange = (event) => {
     onChange?.(event.target.checked);
@@ -19,11 +18,16 @@ const Checkbox = ({ onChange, labelText }) => {
         type="checkbox"
         onChange={handleChange}
       />
-     
-        <label ref={labelRef} tabIndex={0} className={styles.pseudoLabel} htmlFor="checkbox" />
-        <label ref={labelRef} className={styles.label} htmlFor="checkbox">
-          <Text variant="md">{labelText}</Text>
-        </label>
+
+      <label
+        ref={labelRef}
+        tabIndex={0}
+        className={styles.pseudoLabel}
+        htmlFor="checkbox"
+      />
+      <label ref={labelRef} className={styles.label} htmlFor="checkbox">
+        <Text variant="md">{labelText}</Text>
+      </label>
     </div>
   );
 };

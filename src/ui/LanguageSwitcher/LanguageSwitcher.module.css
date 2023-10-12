@@ -1,11 +1,31 @@
 .switcher {
-  width: 40px;
+  width: 46px;
   height: 26px;
   border-radius: var(--button-border-radius);
   cursor: url("../../assets/img/pointer-cursor.png"), pointer;
   position: relative;
   transition: all 0.3s ease;
   background-color: #ccc;
+}
+
+.backgroundTextWrapper {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+}
+
+.backgroundText {
+  transition: color 0.3s ease;
+  color: white;
+  font-size: 10px;
+}
+
+.switcher:hover .backgroundText {
+  color: rgb(26 37 56 / 42%);
 }
 
 .switcherCircle {
@@ -15,7 +35,6 @@
   border-radius: var(--button-border-radius);
   font-size: 10px;
   background-color: var(--primary-text-color);
-  /* background-color: var(--main-accent-color); */
   color: white;
   transition: all 0.3s ease;
   position: absolute;
