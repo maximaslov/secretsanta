@@ -1,6 +1,5 @@
 export const menuItems = [
-    { labelId: 'Інструкція', value: 'instruction'},
-    { labelId: 'Розробник', value: 'developer'},
-    { labelId: 'Донат ЗСУ', value: 'donate'},
-    { labelId: 'Мова', value: 'language'},
+    { labelId: 'headerMenu.instruction', value: 'instruction'},
+    { labelId: 'headerMenu.developer', value: 'developer'},
+    { labelId: 'headerMenu.donate', value: 'donate'},
 ]

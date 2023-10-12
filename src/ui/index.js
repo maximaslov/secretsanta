@@ -9,3 +9,4 @@ export { default as Logo } from "./Logo";
 export { default as Loader } from "./Loader";
 export { default as Modal } from "./Modal";
 export { default as Error } from "./Error";
+export { default as LanguageSwitcher } from "./LanguageSwitcher";

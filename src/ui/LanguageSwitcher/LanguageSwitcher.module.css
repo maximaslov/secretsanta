@@ -1,0 +1,25 @@
+.switcher {
+  width: 40px;
+  height: 26px;
+  border-radius: var(--button-border-radius);
+  cursor: url("../../assets/img/pointer-cursor.png"), pointer;
+  position: relative;
+  transition: all 0.3s ease;
+  background-color: #ccc;
+}
+
+.switcherCircle {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border-radius: var(--button-border-radius);
+  font-size: 10px;
+  background-color: var(--primary-text-color);
+  /* background-color: var(--main-accent-color); */
+  color: white;
+  transition: all 0.3s ease;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

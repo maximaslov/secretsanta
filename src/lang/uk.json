@@ -1,3 +1,7 @@
 {
-    "test.title": "UKRAINIAN"
+    "test.title": "UKRAINIAN",
+    "headerMenu.instruction": "Інструкція",
+    "headerMenu.developer": "Розробник",
+    "headerMenu.donate": "Пітримати ЗСУ",
+    "headerMenu.language": "EN"
 }

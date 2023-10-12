@@ -10,19 +10,19 @@ const useSanta = (names) => {
     santaPairs.set(santa, recipient);
   }
 
-  const getPairByName = (name) => {
-    const recipient = santaPairs.get(name);
+  const getPairByName = (name, pairs = santaPairs) => {
+    const recipient = pairs.get(name);
     if (recipient) {
       return recipient;
     } else {
-      throw new Error('Name not found')
+      throw new Error("Name not found");
     }
-  }
+  };
 
-  return {  
+  return {
     santaPairs,
     getPairByName,
   };
-}
+};
 
-export default useSanta
+export default useSanta;

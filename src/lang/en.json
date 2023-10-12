@@ -1,3 +1,7 @@
 {
-    "test.title": "ENGLISH"
+    "test.title": "ENGLISH",
+    "headerMenu.instruction": "Instruction",
+    "headerMenu.developer": "Developer",
+    "headerMenu.donate": "Support Ukraine",
+    "headerMenu.language": "UK"
 }
