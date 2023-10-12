@@ -8,15 +8,6 @@
   cursor: url('../../assets/img/main-cursor.png'), pointer;
 }
 
-.content {
-  display: flex;
-  flex-direction: column;
-  background: url("../../assets/img/background.jpeg");
-  background-size: cover;
-  background-position: center;
-  height: inherit;
-}
-
 @keyframes show {
   0% {
     opacity: 0;

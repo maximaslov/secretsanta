@@ -1,33 +1,39 @@
 import React, { useState } from "react";
 import "./App.css";
-import { LanguageProvider, MainProvider } from "contexts";
+import { MainProvider } from "contexts";
 import { DynamicDocumentTitle, MainLayout } from "components";
 import {
   Button,
   Checkbox,
-  Error,
+  // Error,
   Heading,
   Input,
   Loader,
   Paper,
   Text,
 } from "ui";
+import { FormattedMessage, IntlProvider } from "react-intl";
+import { useLanguage } from "contexts/languageContext";
 
-//mockapi.io 
+//mockapi.io
 //e-mail: secretsanta2023app@gmail.com
 //password: SecretSanta2023App
 
 function App() {
   const [showLoader, setShowLoader] = useState(true);
+  const { currentLanguage, translations } = useLanguage();
+
   setTimeout(() => {
     setShowLoader(false);
   }, 3000);
 
+  
+
   if (showLoader) return <Loader />;
 
   return (
-    <MainProvider>
-      <LanguageProvider>
+    <IntlProvider locale={currentLanguage} messages={translations}>
+      <MainProvider>
         <DynamicDocumentTitle />
         <MainLayout>
           <div
@@ -38,7 +44,7 @@ function App() {
               padding: "16px",
             }}
           >
-            {/* <Paper>
+            <Paper>
               <div
                 style={{
                   padding: "24px",
@@ -47,18 +53,20 @@ function App() {
                   gap: "16px",
                 }}
               >
-                <Heading>Title</Heading>
+                <Heading>
+                  <FormattedMessage id="test.title" />
+                </Heading>
                 <Text>Subtitle</Text>
                 <Text variant="md">Description</Text>
                 <Input placeholder="Placeholder" />
                 <Checkbox labelText="Check me" />
                 <Button>Create new company</Button>
               </div>
-            </Paper> */}
+            </Paper>
           </div>
         </MainLayout>
-      </LanguageProvider>
-    </MainProvider>
+      </MainProvider>
+    </IntlProvider>
   );
 }
 

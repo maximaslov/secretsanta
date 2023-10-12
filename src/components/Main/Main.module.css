@@ -1,0 +1,8 @@
+.content {
+  display: flex;
+  flex-direction: column;
+  background: url("../../assets/img/background.jpeg");
+  background-size: cover;
+  background-position: center;
+  height: inherit;
+}

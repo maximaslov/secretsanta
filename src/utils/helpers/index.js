@@ -1,2 +1,2 @@
 export { default as handleEvent } from "./handleEvent";
-export { default as getSecretSanta } from "./getSecretSanta";
+export { default as getShuffledArray } from "./getShuffledArray";

@@ -1,15 +1,12 @@
 import Header from "components/Header";
 import styles from "./MainLayout.module.css";
-import Snowfall from "react-snowfall";
+import Main from "components/Main";
 
 const MainLayout = ({ children }) => {
   return (
     <div className={styles.mainLayout}>
       <Header />
-      <Snowfall />
-      <main className={styles.content}>
-        {children}
-      </main>
+      <Main children={children}/>
     </div>
   );
 };

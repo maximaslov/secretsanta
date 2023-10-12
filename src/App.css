@@ -8,8 +8,8 @@
   /* Colors */
   --main-accent-color: rgb(33, 144, 11);
   --main-white-color: #ffffff;
-  --main-focus-visible-color: rgb(248, 70, 70);
-  --main-error-color: rgb(248, 70, 70);
+  --main-focus-visible-color: #dd1919;
+  --main-error-color: #dd1919;
 
   --primary-background-color: #ffffff;
   --secondary-background-color: #ebebeb;
@@ -19,8 +19,8 @@
   --main-border-hover-color:  rgba(33, 144, 11, 0.335);
 
     /* Text colors */
-  --primary-text-color: rgb(33, 144, 11);
-  --secondary-text-color: rgba(33, 144, 11, 0.706);
+  --primary-text-color: rgb(26 37 56);
+  --secondary-text-color: rgb(33, 144, 11);
   --placeholder-text-color: rgba(215, 215, 215, 0.929);
 
   /* Effects */

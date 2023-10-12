@@ -1,0 +1,1 @@
+export { default as useSanta } from "./useSanta";
