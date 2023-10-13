@@ -25,7 +25,7 @@
 
   /* Effects */
   --primary-shadow: 0px 0px 35px 1px #6f6e6e26;
-  --error-shadow: 0px 0px 27px 2px #f5070726;
+  --error-shadow: 0px 0px 10px -4px #f5070736;
 
   /* Radii */
   --primary-border-radius: 4px;

@@ -8,5 +8,6 @@
     "startpage.isRegisteredCompany.button.yes": "Так",
     "createCompany.teamMembersNumber": "Введіть кількість участників",
     "createCompany.button.back": "Назад",
-    "createCompany.button.next": "Далі"
+    "createCompany.button.next": "Далі",
+    "createCompany.teamMembersNumber.placeholder": "Наприклад: 7"
 }

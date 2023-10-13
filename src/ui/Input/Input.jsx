@@ -1,6 +1,6 @@
 import styles from "./Input.module.css";
 
-const Input = ({ type, placeholder, onChange }) => {
+const Input = ({ type, placeholder, onChange, value }) => {
   const handleChange = (event) => {
     onChange?.(event.target.value);
   };
@@ -11,6 +11,7 @@ const Input = ({ type, placeholder, onChange }) => {
       type={type}
       placeholder={placeholder}
       onChange={handleChange}
+      value={value}
     />
   );
 };

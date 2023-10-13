@@ -8,5 +8,6 @@
     "startpage.isRegisteredCompany.button.yes": "Yes",
     "createCompany.teamMembersNumber": "Enter the number of participants",
     "createCompany.button.back": "Back",
-    "createCompany.button.next": "Next"
+    "createCompany.button.next": "Next",
+    "createCompany.teamMembersNumber.placeholder": "For example: 7"
 }

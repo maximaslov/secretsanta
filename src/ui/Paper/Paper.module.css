@@ -6,13 +6,9 @@
     animation: show 0.3s ease;
 }
 
-.primaryPaper {
+.primaryPaper, .errorPaper {
     width: fit-content;
     background-color: var(--primary-background-color);
-}
-
-.errorPaper {
-    background-color: var(--error-background-color);
 }
 
 .secondaryPaper {

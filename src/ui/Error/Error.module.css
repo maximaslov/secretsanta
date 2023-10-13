@@ -19,13 +19,13 @@
     transform: translate(-50%, -400%);
   }
   20% {
-    transform: translate(-50%, -200%);
+    transform: translate(-50%, -50%);
   }
   50% {
-    transform: translate(-50%, -200%);
+    transform: translate(-50%, -50%);
   }
   80% {
-    transform: translate(-50%, -200%);
+    transform: translate(-50%, -50%);
   }
   100% {
     transform: translateY(-50%, -400%);
