@@ -12,17 +12,7 @@ const LanguageSwitcher = () => {
 
   return (
     <div className={styles.switcher} onClick={handleClick}>
-      <div
-        style={{
-          position: "absolute",
-          display: "flex",
-          alignItems: "center",
-          gap: "10px",
-          height: "100%",
-          width: "100%",
-          justifyContent: "center",
-        }}
-      >
+      <div className={styles.backgroundTextWrapper}>
         <p className={styles.backgroundText}>UK</p>
         <p className={styles.backgroundText}>EN</p>
       </div>

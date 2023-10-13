@@ -3,6 +3,7 @@
     width: fit-content;
     box-shadow: var(--primary-shadow);
     border-radius: var(--primary-border-radius);
+    animation: show 0.3s ease;
 }
 
 .primaryPaper {
@@ -21,5 +22,14 @@
 .errorPaper {
     border-radius: var(--primary-border-radius);
     box-shadow: var(--error-shadow);
+}
+
+@keyframes show {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 

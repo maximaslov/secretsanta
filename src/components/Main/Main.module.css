@@ -5,4 +5,21 @@
   background-size: cover;
   background-position: center;
   height: inherit;
+  margin-top: 83px;
+  align-items: center;
+}
+
+.container {
+  max-width: 1000px;
+  padding: 32px 32px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 426px) {
+  .content {
+    margin-top: 67px;
+  }
 }

@@ -5,7 +5,7 @@ const Main = ({ children }) => {
   return (
     <main className={styles.content}>
       <Snowfall />
-      {children}
+      <div className={styles.container}>{children}</div>
     </main>
   );
 };

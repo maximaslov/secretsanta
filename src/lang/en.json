@@ -1,6 +1,12 @@
 {
-    "test.title": "ENGLISH",
     "headerMenu.instruction": "Instruction",
     "headerMenu.developer": "Developer",
-    "headerMenu.donate": "Support Ukraine"
+    "headerMenu.donate": "Support Ukraine",
+    "startpage.startButton": "Start",
+    "startpage.isRegisteredCompany": "Is the company already registered?",
+    "startpage.isRegisteredCompany.button.no": "No",
+    "startpage.isRegisteredCompany.button.yes": "Yes",
+    "createCompany.teamMembersNumber": "Enter the number of participants",
+    "createCompany.button.back": "Back",
+    "createCompany.button.next": "Next"
 }

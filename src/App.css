@@ -29,6 +29,7 @@
 
   /* Radii */
   --primary-border-radius: 4px;
+  --secondary-border-radius: 2px;
 
   /* Font sizes */
   --main-font-size: 16px;

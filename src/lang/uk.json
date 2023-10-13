@@ -1,6 +1,12 @@
 {
-    "test.title": "UKRAINIAN",
     "headerMenu.instruction": "Інструкція",
     "headerMenu.developer": "Розробник",
-    "headerMenu.donate": "Пітримати ЗСУ"
+    "headerMenu.donate": "Пітримати ЗСУ",
+    "startpage.startButton": "Почати",
+    "startpage.isRegisteredCompany": "Компанія вже зареєстрована?",
+    "startpage.isRegisteredCompany.button.no": "Ні",
+    "startpage.isRegisteredCompany.button.yes": "Так",
+    "createCompany.teamMembersNumber": "Введіть кількість участників",
+    "createCompany.button.back": "Назад",
+    "createCompany.button.next": "Далі"
 }

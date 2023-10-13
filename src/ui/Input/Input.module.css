@@ -1,6 +1,6 @@
 .input {
     padding: 6px 8px;
-    border-radius: var(--primary-border-radius);
+    border-radius: var(--secondary-border-radius);
     background-color: var(--primary-background-color);
     color: var(--primary-text-color);
     font-size: var(--ui-font-size);
