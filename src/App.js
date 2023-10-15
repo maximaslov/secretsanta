@@ -29,7 +29,7 @@ function App() {
           <DynamicDocumentTitle />
           <MainLayout>
             <Routes>
-              <Route path="/" element={<BeginPage />} />
+              <Route exact path="/" element={<BeginPage />} />
               <Route path="/create-company" element={<CreateCompany />} />
               {/* <Route path="/create-company" element={<CreateCompany />} /> */}
               {/* <Route path="" element={<CurrentCompany />} /> */}

@@ -1,18 +1,21 @@
 import React, { createContext, useContext, useState } from "react";
+import { useIntl } from "react-intl";
 
 export const AppContext = createContext();
 
 const MainProvider = ({ children }) => {
-  const [errorMessage, setErrorMessage] = useState("");
+  const { formatMessage } = useIntl();
 
+  const [errorMessage, setErrorMessage] = useState("");
   const [isError, setError] = useState(false);
 
   const showError = (message) => {
-    if(isError || errorMessage === message) {
-      return
+    const messageText = formatMessage({ id: message });
+    if (isError || errorMessage === messageText) {
+      return;
     }
 
-    setErrorMessage(message);
+    setErrorMessage(messageText);
     setError(true);
 
     setTimeout(() => {

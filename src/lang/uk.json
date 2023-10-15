@@ -6,8 +6,11 @@
     "startpage.isRegisteredCompany": "Компанія вже зареєстрована?",
     "startpage.isRegisteredCompany.button.no": "Ні",
     "startpage.isRegisteredCompany.button.yes": "Так",
-    "createCompany.teamMembersNumber": "Введіть кількість участників",
+    "createCompany.teamMembersNumber": "Введіть кількість учасників",
     "createCompany.button.back": "Назад",
     "createCompany.button.next": "Далі",
-    "createCompany.teamMembersNumber.placeholder": "Наприклад: 7"
+    "createCompany.teamMembersNumber.placeholder": "Наприклад: 7",
+    "error.maxParticipants": "Максимум 30 учасників",
+    "error.minParticipants": "В компанії має бути мінімум 3 учасники",
+    "participantsForm.nameInput.placeholder": "Введіть унікальне імʼя"
 }

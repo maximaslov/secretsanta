@@ -18,7 +18,7 @@
   background-color: var(--primary-background-color);
   border: 1px solid;
   border-color: var(--placeholder-text-color);
-  cursor: url('../../assets/img/pointer-cursor.png'), pointer;
+  cursor: url('../../assets/img/cursors/pointer-cursor.png'), pointer;
   border-radius: var(--button-border-radius);
   transition: all 0.3s ease;
 }
@@ -64,5 +64,5 @@
 }
 
 .label {
-  cursor: url('../../assets/img/pointer-cursor.png'), pointer;
+  cursor: url('../../assets/img/cursors/pointer-cursor.png'), pointer;
 }

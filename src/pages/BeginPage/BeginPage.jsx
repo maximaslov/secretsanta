@@ -25,8 +25,6 @@ const BeginPage = () => {
   if (firstStep) {
     return <IsRegisteredModal />;
   }
-
-  return <>Hello</>;
 };
 
 export default BeginPage;

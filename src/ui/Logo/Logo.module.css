@@ -5,7 +5,7 @@
   font-family: "Norican", cursive;
   font-weight: 600;
   color: var(--main-focus-visible-color);
-  cursor: url('../../assets/img/main-cursor.png'), pointer;
+  cursor: url('../../assets/img/cursors/main-cursor.png'), pointer;
   z-index: 999;
 }
 

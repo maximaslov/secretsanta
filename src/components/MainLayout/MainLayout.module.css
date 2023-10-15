@@ -5,7 +5,7 @@
   background-position: center;
   display: flex;
   flex-direction: column;
-  cursor: url('../../assets/img/main-cursor.png'), pointer;
+  cursor: url('../../assets/img/cursors/main-cursor.png'), pointer;
 }
 
 @keyframes show {

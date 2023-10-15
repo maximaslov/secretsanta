@@ -9,5 +9,8 @@
     "createCompany.teamMembersNumber": "Enter the number of participants",
     "createCompany.button.back": "Back",
     "createCompany.button.next": "Next",
-    "createCompany.teamMembersNumber.placeholder": "For example: 7"
+    "createCompany.teamMembersNumber.placeholder": "For example: 7",
+    "error.maxParticipants": "Maximum 30 participants",
+    "error.minParticipants": "There must be a minimum of 3 participants in the company",
+    "participantsForm.nameInput.placeholder": "Enter a unique name"
 }

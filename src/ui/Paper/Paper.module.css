@@ -1,5 +1,5 @@
 .primaryPaper, .secondaryPaper {
-    height: 100%;
+    height: fit-content;
     width: fit-content;
     box-shadow: var(--primary-shadow);
     border-radius: var(--primary-border-radius);

@@ -3,7 +3,7 @@
   list-style: none;
   width: fit-content;
   border: solid 1px transparent;
-  cursor: url('../../assets/img/pointer-cursor.png'), pointer;
+  cursor: url('../../assets/img/cursors/pointer-cursor.png'), pointer;
 }
 
 .activeMenuItem::after {

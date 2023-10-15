@@ -1,6 +1,6 @@
 .primaryButton {
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
-  cursor: url('../../assets/img/pointer-cursor.png'), pointer;
+  cursor: url('../../assets/img/cursors/pointer-cursor.png'), pointer;
   padding: 9px 16px;
   color: var(--button-primary-text);
   background-color: var(--button-primary-bg);
@@ -24,7 +24,7 @@
 
 .secondaryButton {
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
-  cursor: url('../../assets/img/pointer-cursor.png'), pointer;
+  cursor: url('../../assets/img/cursors/pointer-cursor.png'), pointer;
   padding: 8px 16px;
   color: var(--button-secondary-text);
   background-color: var(--button-secondary-bg);

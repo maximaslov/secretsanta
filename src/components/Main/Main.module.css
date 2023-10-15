@@ -1,10 +1,12 @@
 .content {
   display: flex;
   flex-direction: column;
-  background: url("../../assets/img/background.jpeg");
+  background: url("../../assets/img/backgrounds/background.jpeg");
   background-size: cover;
-  background-position: center;
-  height: inherit;
+  background-position: revert-layer;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  height: 100vh;
   margin-top: 83px;
   align-items: center;
 }
@@ -16,6 +18,11 @@
   margin: 0 auto;
   display: flex;
   justify-content: center;
+  overflow: auto;
+}
+
+.container::-webkit-scrollbar {
+  display: none;
 }
 
 @media (max-width: 426px) {
