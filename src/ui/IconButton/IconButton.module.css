@@ -1,0 +1,16 @@
+.iconButton, .iconButtonDisabled {
+    display: flex;
+    align-items: center;
+}
+
+.iconButton {
+    cursor: url('../../assets/img/cursors/pointer-cursor.png'), pointer;
+}
+
+.iconButton p {
+    color: var(---primary-text-color);
+}
+
+.iconButton svg path {
+    transition: all 0.3s ease;
+}

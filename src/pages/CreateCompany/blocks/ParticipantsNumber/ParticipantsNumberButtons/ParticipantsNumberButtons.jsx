@@ -8,6 +8,7 @@ const ParticipantsNumberButtons = ({
   setSecondStep,
   setInitValues,
   inputValue,
+  setPartcipiantsNumber,
 }) => {
   const { showError } = useAppContext();
 
@@ -19,7 +20,7 @@ const ParticipantsNumberButtons = ({
 
     setFirstStep(false);
     setSecondStep(true);
-
+    setPartcipiantsNumber(inputValue)
     setInitValues({ names: new Array(Number(inputValue)).fill({name: "" })});
   };
 

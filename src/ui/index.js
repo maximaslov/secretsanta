@@ -11,3 +11,5 @@ export { default as Modal } from "./Modal";
 export { default as Error } from "./Error";
 export { default as LanguageSwitcher } from "./LanguageSwitcher";
 export { default as Wrapper } from "./Wrapper";
+export { default as IconButton } from "./IconButton";
+export { default as DeleteButton } from "./DeleteButton";

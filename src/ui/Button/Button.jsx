@@ -8,8 +8,8 @@ const Button = ({ children, variant, onClick, ...props }) => {
 
   const mainButtonClass = stylesVariants[variant];
 
-  const handleClick = () => {
-    onClick?.();
+  const handleClick = (event) => {
+    onClick?.(event);
   };
 
   return (

@@ -1,20 +1,12 @@
-import { DevTool } from "@hookform/devtools";
 import { FormProvider, useForm } from "react-hook-form";
 
-const Form = ({ children, defaultValues, onSubmit, preventSubmitByEvents }) => {
+const Form = ({ children, defaultValues, onSubmit }) => {
   const methods = useForm({ defaultValues });
 
   return (
-    <>
-      <FormProvider {...methods}>
-        <form onSubmit={methods.handleSubmit(onSubmit)}>{children}</form>
-      </FormProvider>
-      <DevTool control={methods.control} />
-    </>
+    <FormProvider {...methods}>
+      <form onSubmit={methods.handleSubmit(onSubmit)}>{children}</form>
+    </FormProvider>
   );
-};
-
-Form.defaultProps = {
-  preventSubmitByEvents: true,
 };
 export default Form;

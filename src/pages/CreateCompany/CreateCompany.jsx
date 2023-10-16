@@ -1,19 +1,20 @@
-import { useState } from "react";
+import {useState } from "react";
 import { ParticipantsForm, ParticipantsNumber } from "./blocks";
 
 const CreateCompany = () => {
   const [isFirstStep, setFirstStep] = useState(true);
   const [isSecondStep, setSecondStep] = useState(false);
   const [initValues, setInitValues] = useState({});
+  const [participantsNumber, setPartcipiantsNumber] = useState('')
 
   const params = {
     setFirstStep,
     setSecondStep,
-    initValues,
+    initValues, 
     setInitValues,
+    setPartcipiantsNumber,
+    participantsNumber
   };
-
-  console.log(initValues)
   
   if (isFirstStep) {
     return <ParticipantsNumber {...params} />;

@@ -1,14 +1,23 @@
 import { useAppContext } from "contexts";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { FormattedMessage, useIntl } from "react-intl";
 import { Heading, Input, Wrapper } from "ui";
-import ParticipantsNumberButtons from "./ParticipantsNumberButtons";
+import ParticipantsNumberButtons from "./ParticipantsNumberButtons/ParticipantsNumberButtons";
 
-const ParticipantsNumber = (props) => {
+const ParticipantsNumber = ({ participantsNumber, ...props }) => {
   const { showError } = useAppContext();
   const { formatMessage } = useIntl();
 
+  const inputRef = useRef(null);
+
   const [inputValue, setInputValue] = useState("");
+
+  useEffect(() => {
+    setInputValue(participantsNumber);
+    if (participantsNumber) {
+      inputRef.current.focus();
+    }
+  }, [participantsNumber]);
 
   const handleInputChange = (value) => {
     let result = value.replace(/\D/g, "");
@@ -30,6 +39,7 @@ const ParticipantsNumber = (props) => {
         <FormattedMessage id="createCompany.teamMembersNumber" />
       </Heading>
       <Input
+        ref={inputRef}
         placeholder={teamMembersPlaceholder}
         value={inputValue}
         onChange={handleInputChange}
