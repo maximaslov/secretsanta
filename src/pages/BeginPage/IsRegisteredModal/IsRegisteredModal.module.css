@@ -1,0 +1,11 @@
+.firstStepWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.firsStepButtons{
+    display: flex; 
+    justify-content: center; 
+    gap: 8px;
+}

@@ -16,6 +16,7 @@ const Button = ({ children, variant, onClick, ...props }) => {
     <button
       className={mainButtonClass}
       onClick={handleClick}
+      tabIndex={0}
       {...props}
     >
       {children}

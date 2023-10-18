@@ -14,3 +14,8 @@
 .iconButton svg path {
     transition: all 0.3s ease;
 }
+
+.iconButton:focus-visible {
+    outline-color: var(--main-focus-visible-color);
+    outline-offset: 1px;
+}   

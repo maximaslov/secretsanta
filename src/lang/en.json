@@ -12,5 +12,8 @@
     "createCompany.teamMembersNumber.placeholder": "For example: 7",
     "error.maxParticipants": "Maximum 30 participants",
     "error.minParticipants": "There must be a minimum of 3 participants in the company",
+    "error.emptyField": "No field should be empty",
+    "participantsForm.title": "Fill in all fields with the names of participants",
+    "participantsForm.fields.addField": "Add participant",
     "participantsForm.nameInput.placeholder": "Enter a unique name"
 }

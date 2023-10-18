@@ -1,10 +1,10 @@
 import styles from "./Wrapper.module.css";
 import Paper from "ui/Paper";
 
-const Wrapper = ({ children }) => {
+const Wrapper = ({ children, ...props }) => {
   return (
     <Paper>
-      <div className={styles.wrapper}>{children}</div>
+      <div className={styles.wrapper} style={{...props}}>{children}</div>
     </Paper>
   );
 };

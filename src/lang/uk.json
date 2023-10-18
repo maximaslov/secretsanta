@@ -12,5 +12,8 @@
     "createCompany.teamMembersNumber.placeholder": "Наприклад: 7",
     "error.maxParticipants": "Максимум 30 учасників",
     "error.minParticipants": "В компанії має бути мінімум 3 учасники",
+    "error.emptyField": "Жодне поле не повинно бути пустим",
+    "participantsForm.title": "Заповніть всі поля іменами учасників",
+    "participantsForm.fields.addField": "Додати учасника",
     "participantsForm.nameInput.placeholder": "Введіть унікальне імʼя"
 }

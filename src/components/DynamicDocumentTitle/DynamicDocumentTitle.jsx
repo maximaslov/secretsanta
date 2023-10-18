@@ -1,5 +1,5 @@
-import { useLanguage } from "contexts/languageContext";
 import { useEffect } from "react";
+import { useLanguage } from "contexts/languageContext";
 
 const DynamicDocumentTitle = () => {
   const { currentLanguage } = useLanguage();

@@ -2,10 +2,14 @@
   width: 46px;
   height: 26px;
   border-radius: var(--button-border-radius);
-  cursor: url('../../assets/img/cursors/pointer-cursor.png'), pointer;
+  cursor: url("../../assets/img/cursors/pointer-cursor.png"), pointer;
   position: relative;
-  transition: all 0.3s ease;
+  /* transition: all 0.3s ease; */
   background-color: #ccc;
+}
+
+.switcher:focus-visible {
+  outline: solid 1px var(--main-focus-visible-color);
 }
 
 .backgroundTextWrapper {

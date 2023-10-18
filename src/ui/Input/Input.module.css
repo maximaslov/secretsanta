@@ -5,7 +5,8 @@
     color: var(--primary-text-color);
     font-size: var(--ui-font-size);
     border: var(--input-border);
-    transition: all 0.3s ease,
+    transition: all 0.3s ease;
+    width: 100%;
 }
 
 .input:hover {

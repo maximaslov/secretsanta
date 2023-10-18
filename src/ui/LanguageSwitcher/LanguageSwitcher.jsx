@@ -1,5 +1,6 @@
 import { useLanguage } from "contexts/languageContext";
 import styles from "./LanguageSwitcher.module.css";
+import { handleEvent } from "utils/helpers";
 
 const LanguageSwitcher = () => {
   const { currentLanguage, switchLanguage } = useLanguage();
@@ -11,7 +12,7 @@ const LanguageSwitcher = () => {
   };
 
   return (
-    <div className={styles.switcher} onClick={handleClick}>
+    <div className={styles.switcher} {...handleEvent(handleClick)} tabIndex={0}>
       <div className={styles.backgroundTextWrapper}>
         <p className={styles.backgroundText}>UK</p>
         <p className={styles.backgroundText}>EN</p>

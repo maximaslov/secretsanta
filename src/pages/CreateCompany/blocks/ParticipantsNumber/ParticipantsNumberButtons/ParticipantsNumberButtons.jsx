@@ -20,13 +20,13 @@ const ParticipantsNumberButtons = ({
 
     setFirstStep(false);
     setSecondStep(true);
-    setPartcipiantsNumber(inputValue)
-    setInitValues({ names: new Array(Number(inputValue)).fill({name: "" })});
+    setPartcipiantsNumber(inputValue);
+    setInitValues({ names: new Array(Number(inputValue)).fill({ name: "" }) });
   };
 
   return (
     <div style={{ display: "flex", gap: "8px", justifyContent: "flex-end" }}>
-      <Link to="/" state={{ isReturned: true }}>
+      <Link tabIndex={-1} to="/" state={{ isReturned: true }}>
         <Button variant="secondary">
           <FormattedMessage id="createCompany.button.back" />
         </Button>

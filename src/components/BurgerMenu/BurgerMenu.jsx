@@ -1,6 +1,6 @@
+import { useState } from "react";
 import Menu from "components/Menu";
 import styles from "./BurgerMenu.module.css";
-import { useState } from "react";
 
 const BurgerMenu = ({ list }) => {
   const [isOpen, setIsOpen] = useState(false);

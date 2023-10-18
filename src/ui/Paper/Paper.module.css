@@ -1,9 +1,9 @@
 .primaryPaper, .secondaryPaper {
     height: fit-content;
-    width: fit-content;
     box-shadow: var(--primary-shadow);
     border-radius: var(--primary-border-radius);
     animation: show 0.3s ease;
+    width: 100%;
 }
 
 .primaryPaper, .errorPaper {
@@ -11,13 +11,10 @@
     background-color: var(--primary-background-color);
 }
 
-.secondaryPaper {
-    background-color: var(--secondary-background-color);
-}
-
 .errorPaper {
     border-radius: var(--primary-border-radius);
     box-shadow: var(--error-shadow);
+    
 }
 
 @keyframes show {

@@ -1,0 +1,8 @@
+.fields {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-right: 24px;
+  height: 100%;
+  overflow: scroll;
+}

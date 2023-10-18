@@ -13,6 +13,7 @@
 
 .primaryButton:hover,
 .primaryButton:focus-visible {
+  outline: none;
   box-shadow: var(--button-primary-hover-shadow);
   background-color: var(--button-primary-hover-bg);
 }
@@ -21,6 +22,7 @@
 .primaryButton:focus-visible:active {
   box-shadow: var(--button-primary-active-shadow);
 }
+
 
 .secondaryButton {
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
@@ -37,6 +39,7 @@
 
 .secondaryButton:hover,
 .secondaryButton:focus-visible {
+  outline: none;
   box-shadow: var(--button-secondary-hover-shadow);
   background-color: var(--button-secondary-hover-bg);
   color: var(--button-secondary-hover-text);
@@ -58,7 +61,7 @@
 .primaryButton:focus-visible,
 .secondaryButton:focus-visible {
   outline-color: var(--main-focus-visible-color);
-  outline-width: 2px;
+  outline-width: 1px;
   outline-style: solid;
   outline-offset: -1px;
 }

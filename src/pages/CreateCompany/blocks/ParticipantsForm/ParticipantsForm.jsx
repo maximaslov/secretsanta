@@ -1,34 +1,25 @@
 import { Form } from "components";
-import { Button, Wrapper } from "ui";
+import { Heading, Wrapper } from "ui";
+import { FormattedMessage } from "react-intl";
 import ParticipantsFormFields from "./ParticipantsFormFields";
+import ParticipantsFormButtons from "./ParticipantsFormButtons";
+import { participantsFormSchema } from "./participantsFormSchema";
 
-const ParticipantsForm = ({ setFirstStep, setSecondStep, initValues }) => {
-  const handleSetFirstStep = (event) => {
-    event.preventDefault();
-    setFirstStep(true);
-    setSecondStep(false);
-  };
-
+const ParticipantsForm = ({ initValues, ...props }) => {
   const handleSubmit = (data) => {
     console.log(data);
   };
-
+  
   return (
-    <Form defaultValues={initValues} onSubmit={handleSubmit}>
-      <Wrapper>
-        <ParticipantsFormFields initValues={initValues} />
-        <div
-          style={{ display: "flex", gap: "8px", justifyContent: "flex-end" }}
-        >
-          <Button
-            variant="secondary"
-            type="submit"
-            onClick={handleSetFirstStep}
-          >
-            Back
-          </Button>
-          <Button type="submit">Next</Button>
+    <Form defaultValues={initValues} onSubmit={handleSubmit} schema={participantsFormSchema}>
+      <Wrapper maxHeight="60vh" paddingRight="0">
+        <div style={{ paddingRight: "24px" }}>
+          <Heading>
+            <FormattedMessage id="participantsForm.title" />
+          </Heading>
         </div>
+        <ParticipantsFormFields initValues={initValues} />
+        <ParticipantsFormButtons {...props}/>
       </Wrapper>
     </Form>
   );

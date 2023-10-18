@@ -1,8 +1,8 @@
 import { Logo } from "ui";
-import styles from "./Header.module.css";
-import BurgerMenu from "components/BurgerMenu";
 import Menu from "components/Menu";
+import styles from "./Header.module.css";
 import { menuItems } from "./menuDefinitions";
+import BurgerMenu from "components/BurgerMenu";
 
 const Header = () => {
   return (

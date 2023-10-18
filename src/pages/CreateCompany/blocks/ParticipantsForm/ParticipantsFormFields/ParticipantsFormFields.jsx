@@ -1,10 +1,11 @@
+import styles from "./ParticipantsFormFields.module.css";
 import { FormInput } from "components";
 import { useFieldArray, useFormContext } from "react-hook-form";
+import { FormattedMessage } from "react-intl";
 import { Button } from "ui";
 
 const ParticipantsFormFields = () => {
-  const { control } = useFormContext();
-
+  const { control  } = useFormContext();
   const { fields, append, remove } = useFieldArray({
     control,
     name: "names",
@@ -23,7 +24,7 @@ const ParticipantsFormFields = () => {
   };
 
   return (
-    <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+    <div className={styles.fields}>
       {fields.map((field, index) => (
         <FormInput
           key={field.id}
@@ -39,7 +40,7 @@ const ParticipantsFormFields = () => {
           variant="secondary"
           onClick={handleAddField}
         >
-          Add field
+          <FormattedMessage id="participantsForm.fields.addField" />
         </Button>
       )}
     </div>
