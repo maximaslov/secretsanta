@@ -1,5 +1,9 @@
-import { object, string } from "yup";
+import * as yup from "yup";
 
-export const participantsFormSchema = object({
-  name: string().required('error.emptyField'),
+export const participantsFormSchema = yup.object().shape({
+  names: yup.array().of(
+    yup.object().shape({
+      name: yup.string().required(),
+    })
+  ),
 });

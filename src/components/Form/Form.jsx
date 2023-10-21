@@ -2,9 +2,13 @@ import { FormProvider, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 
 const Form = ({ children, onSubmit, schema, ...props }) => {
-  const resolver = yupResolver(schema);
-
-  const methods = useForm({ resolver, ...props });
+  let resolver;
+  if (schema) {
+    resolver = yupResolver(schema);
+  }
+  const methods = useForm({ 
+    resolver, 
+    ...props });
 
   return (
     <FormProvider {...methods}>

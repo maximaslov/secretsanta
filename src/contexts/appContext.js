@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState } from "react";
+import React, { createContext, useCallback, useContext, useState } from "react";
 import { useIntl } from "react-intl";
 
 export const AppContext = createContext();
@@ -9,20 +9,23 @@ const MainProvider = ({ children }) => {
   const [errorMessage, setErrorMessage] = useState("");
   const [isError, setError] = useState(false);
 
-  const showError = (message) => {
-    const messageText = formatMessage({ id: message });
-    if (isError || errorMessage === messageText) {
-      return;
-    }
+  const showError = useCallback(
+    (message) => {
+      const messageText = formatMessage({ id: message });
+      if (isError || errorMessage === messageText) {
+        return;
+      }
 
-    setErrorMessage(messageText);
-    setError(true);
+      setErrorMessage(messageText);
+      setError(true);
 
-    setTimeout(() => {
-      setError(false);
-      setErrorMessage("");
-    }, 4000);
-  };
+      setTimeout(() => {
+        setError(false);
+        setErrorMessage("");
+      }, 4000);
+    },
+    [errorMessage, setErrorMessage, isError, setError, formatMessage]
+  );
 
   const value = {
     showError,

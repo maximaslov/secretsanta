@@ -9,7 +9,7 @@ const Input = forwardRef(
     const handleChange = (event) => {
       onChange?.(isReturnValue ? event.target.value : event);
     };
-
+    
     return (
       <input
         ref={ref}
@@ -18,7 +18,7 @@ const Input = forwardRef(
         placeholder={placeholder}
         onChange={handleChange}
         value={value}
-        style={isError && { borderColor: "red" }}
+        style={isError ? { borderColor: 'red' } : {}}
         {...props}
       />
     );
