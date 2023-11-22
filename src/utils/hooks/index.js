@@ -1,1 +1,1 @@
-export { default as useSanta } from "./useSanta";
+export { default as useError } from "./useError";

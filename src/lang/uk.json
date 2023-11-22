@@ -13,7 +13,16 @@
     "error.maxParticipants": "Максимум 30 учасників",
     "error.minParticipants": "В компанії має бути мінімум 3 учасники",
     "error.emptyField": "Жодне поле не повинно бути пустим",
+    "error.duplicateNames": "Кожне імʼя повинно бути унікальним",
+    "error.nameNotFound": "Імʼя не знайдено в поточній компанії",
+    "error.serverError": "Щось пішло не так. Будь ласка, спробуйте пізніше",
     "participantsForm.title": "Заповніть всі поля іменами учасників",
     "participantsForm.fields.addField": "Додати учасника",
-    "participantsForm.nameInput.placeholder": "Введіть унікальне імʼя"
+    "participantsForm.nameInput.placeholder": "Введіть унікальне імʼя",
+    "result.nameInput": "Введіть своє імʼя",
+    "result.button.next": "Стати таємним Сантою",
+    "result.sectetSanta": "Ви будете таємним Сантою у XXX",
+    "result.participantsList": "Список усіх учасників:",
+    "result.companyNumber": "Номер вашої компанії:",
+    "result.companyPassword": "Пароль вашої компанії:"
 }

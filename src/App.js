@@ -6,7 +6,7 @@ import { DynamicDocumentTitle, MainLayout } from "components";
 import { IntlProvider } from "react-intl";
 import { useLanguage } from "contexts/languageContext";
 import { Loader } from "ui";
-import { BeginPage, CreateCompany } from "pages";
+import { BeginPage, CreateCompany, Result } from "pages";
 
 //mockapi.io
 //e-mail: secretsanta2023app@gmail.com
@@ -31,9 +31,10 @@ function App() {
             <Routes>
               <Route exact path="/" element={<BeginPage />} />
               <Route path="/create-company" element={<CreateCompany />} />
+              <Route path="/company-result" element={<Result />} />
               {/* <Route path="/create-company" element={<CreateCompany />} /> */}
               {/* <Route path="" element={<CurrentCompany />} /> */}
-              {/* <Route path="" element={<Result />} /> */}
+              
               {/* <Route path="/instuction" element={<Instruction />}/>  */}
               {/* <Route path="/developer" element={<Developer />}/>  */}
               {/* <Route path="/support-ukraine" element={<MonobankPage />}/>  */}

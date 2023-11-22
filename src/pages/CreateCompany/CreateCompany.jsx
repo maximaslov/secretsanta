@@ -1,26 +1,26 @@
-import {useState } from "react";
+import { useState } from "react";
 import { ParticipantsForm, ParticipantsNumber } from "./blocks";
 
 const CreateCompany = () => {
-  const [isFirstStep, setFirstStep] = useState(true);
-  const [isSecondStep, setSecondStep] = useState(false);
+  localStorage.removeItem("name");
+  localStorage.removeItem("company");
+  const [currentStep, setCurrentStep] = useState(1);
   const [initValues, setInitValues] = useState({});
   const [participantsNumber, setPartcipiantsNumber] = useState('')
 
   const params = {
-    setFirstStep,
-    setSecondStep,
+    setCurrentStep,
     initValues, 
     setInitValues,
     setPartcipiantsNumber,
     participantsNumber
   };
   
-  if (isFirstStep) {
+  if (currentStep === 1) {
     return <ParticipantsNumber {...params} />;
   }
 
-  if (isSecondStep) {
+  if (currentStep === 2) {
     return <ParticipantsForm {...params}/>
   }
 

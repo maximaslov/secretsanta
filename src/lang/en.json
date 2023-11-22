@@ -13,7 +13,16 @@
     "error.maxParticipants": "Maximum 30 participants",
     "error.minParticipants": "There must be a minimum of 3 participants in the company",
     "error.emptyField": "No field should be empty",
+    "error.duplicateNames": "Each name must be unique",
+    "error.nameNotFound": "Name not found in current company",
+    "error.serverError": "Something went wrong. Please try later",
     "participantsForm.title": "Fill in all fields with the names of participants",
     "participantsForm.fields.addField": "Add participant",
-    "participantsForm.nameInput.placeholder": "Enter a unique name"
+    "participantsForm.nameInput.placeholder": "Enter a unique name",
+    "result.nameInput": "Enter your name",
+    "result.button.next": "Become a secret Santa",
+    "result.sectetSanta": "You will be XXX's secret Santa.",
+    "result.participantsList": "List of all participants:",
+    "result.companyNumber": "Your company number:",
+    "result.companyPassword": "Your company password:"
 }

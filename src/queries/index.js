@@ -1,1 +1,1 @@
-export { useSantaApi } from "./useSantaApi";
+export { useSantaApi } from './useSantaApi'

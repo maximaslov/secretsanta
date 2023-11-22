@@ -11,6 +11,7 @@ const ParticipantsNumber = ({ participantsNumber, ...props }) => {
   const inputRef = useRef(null);
 
   const [inputValue, setInputValue] = useState("");
+  const [isNumberInputError, setNumberInputError] = useState(false)
 
   useEffect(() => {
     setInputValue(participantsNumber);
@@ -43,9 +44,10 @@ const ParticipantsNumber = ({ participantsNumber, ...props }) => {
         placeholder={teamMembersPlaceholder}
         value={inputValue}
         onChange={handleInputChange}
+        isError={isNumberInputError}
         isReturnValue
       />
-      <ParticipantsNumberButtons inputValue={inputValue} {...props} />
+      <ParticipantsNumberButtons inputValue={inputValue} setNumberInputError={setNumberInputError} {...props} />
     </Wrapper>
   );
 };

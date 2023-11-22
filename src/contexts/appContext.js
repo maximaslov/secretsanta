@@ -1,43 +1,84 @@
-import React, { createContext, useCallback, useContext, useState } from "react";
-import { useIntl } from "react-intl";
+import React, { createContext, useContext, useEffect, useState } from "react";
+import { passwordGenerator, santaGenerator } from "utils/helpers";
+import { useSantaApi } from "queries";
+import { useError } from "utils/hooks";
+import { useNavigate } from "react-router-dom";
 
 export const AppContext = createContext();
 
 const MainProvider = ({ children }) => {
-  const { formatMessage } = useIntl();
+ const [currentCompany, setCurrentCompany] = useState(null);
+ const [sortedCompany, setSortedCompany] = useState(null);
+ const [pairKey, setPairKey] = useState();
+ const [pairNameValue, setPairNameValue] = useState(null);
+ const [currentCompanyData, setCurrentCompanyData] = useState(null);
 
-  const [errorMessage, setErrorMessage] = useState("");
-  const [isError, setError] = useState(false);
+ const { showError, isError, errorMessage } = useError();
+ const navigate = useNavigate()
+ const { post, get } = useSantaApi();
 
-  const showError = useCallback(
-    (message) => {
-      const messageText = formatMessage({ id: message });
-      if (isError || errorMessage === messageText) {
-        return;
-      }
+ useEffect(() => {
+  const { santaPairs } = santaGenerator(currentCompany || []);
+  setSortedCompany(santaPairs);
+ }, [currentCompany]);
 
-      setErrorMessage(messageText);
-      setError(true);
+ useEffect(() => {
+  if (sortedCompany?.size && pairKey) {
+   const { getPairByName } = santaGenerator(currentCompany);
+   const pairByName = getPairByName(pairKey, sortedCompany);
+   if (pairByName) {
+    setPairNameValue(getPairByName(pairByName));
+   } else {
+    showError("error.nameNotFound");
+   }
+  }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+ }, [sortedCompany, pairKey, currentCompany]);
 
-      setTimeout(() => {
-        setError(false);
-        setErrorMessage("");
-      }, 4000);
-    },
-    [errorMessage, setErrorMessage, isError, setError, formatMessage]
-  );
+ useEffect(() => {
+  if (sortedCompany?.size) {
+   const mapData = Array.from(sortedCompany.entries());
 
-  const value = {
-    showError,
-    isError,
-    errorMessage,
-  };
+   const companyData = {
+    company: currentCompany,
+    pairs: mapData,
+    password: passwordGenerator()
+   };
 
-  return <AppContext.Provider value={value}>{children}</AppContext.Provider>;
+   const fetchData = async () => {
+    try {
+     const result = await post(companyData);
+     setCurrentCompanyData(result)
+     localStorage.setItem('company', JSON.stringify(result))
+     navigate('/company-result')
+    } catch (error) {
+     showError('error.serverError')
+    }
+   };
+
+   fetchData();
+  }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+ }, [sortedCompany]);
+
+ const companyRegistration = (data) => {
+  const names = data.map((item) => item.name);
+  setCurrentCompany(names);
+ };
+
+ const value = {
+  showError,
+  isError,
+  errorMessage,
+  companyRegistration,
+  currentCompanyData,
+ };
+
+ return <AppContext.Provider value={value}>{children}</AppContext.Provider>;
 };
 
 export default MainProvider;
 
 export const useAppContext = () => {
-  return useContext(AppContext);
+ return useContext(AppContext);
 };

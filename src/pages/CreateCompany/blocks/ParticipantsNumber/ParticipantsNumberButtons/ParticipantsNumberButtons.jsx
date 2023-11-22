@@ -1,41 +1,46 @@
 import { useAppContext } from "contexts";
+import { useEffect } from "react";
 import { FormattedMessage } from "react-intl";
 import { Link } from "react-router-dom";
 import { Button } from "ui";
 
 const ParticipantsNumberButtons = ({
-  setFirstStep,
-  setSecondStep,
-  setInitValues,
-  inputValue,
-  setPartcipiantsNumber,
+ setCurrentStep,
+ setInitValues,
+ inputValue,
+ setPartcipiantsNumber,
+ setNumberInputError,
 }) => {
-  const { showError } = useAppContext();
+ const { showError } = useAppContext();
 
-  const handleSetSecondStep = () => {
-    if (inputValue < 3) {
-      showError("error.minParticipants");
-      return;
-    }
+ useEffect(() => {
+  if (!inputValue) setNumberInputError(false);
+ }, [inputValue, setNumberInputError]);
 
-    setFirstStep(false);
-    setSecondStep(true);
-    setPartcipiantsNumber(inputValue);
-    setInitValues({ names: new Array(Number(inputValue)).fill({ name: "" }) });
-  };
+ const handleSetSecondStep = () => {
+  if (inputValue < 3) {
+   showError("error.minParticipants");
+   setNumberInputError(true);
+   return;
+  }
 
-  return (
-    <div style={{ display: "flex", gap: "8px", justifyContent: "flex-end" }}>
-      <Link tabIndex={-1} to="/" state={{ isReturned: true }}>
-        <Button variant="secondary">
-          <FormattedMessage id="createCompany.button.back" />
-        </Button>
-      </Link>
-      <Button onClick={handleSetSecondStep}>
-        <FormattedMessage id="createCompany.button.next" />
-      </Button>
-    </div>
-  );
+  setCurrentStep(2);
+  setPartcipiantsNumber(inputValue);
+  setInitValues({ names: new Array(Number(inputValue)).fill({ name: "" }) }); //це правильно
+ };
+
+ return (
+  <div style={{ display: "flex", gap: "8px", justifyContent: "flex-end" }}>
+   <Link tabIndex={-1} to="/" state={{ isReturned: true }}>
+    <Button variant="secondary">
+     <FormattedMessage id="createCompany.button.back" />
+    </Button>
+   </Link>
+   <Button onClick={handleSetSecondStep}>
+    <FormattedMessage id="createCompany.button.next" />
+   </Button>
+  </div>
+ );
 };
 
 export default ParticipantsNumberButtons;
