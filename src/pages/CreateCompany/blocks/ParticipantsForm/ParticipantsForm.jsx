@@ -36,7 +36,6 @@ const ParticipantsForm = ({ initValues, ...props }) => {
   console.log("submit");
   if (errorsValidation(data.names)) {
    companyRegistration(data.names);
-//    console.log(data.names); // виконуємо наступні дії
   }
  };
 

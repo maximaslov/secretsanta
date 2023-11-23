@@ -1,5 +1,8 @@
 import { FormattedMessage, useIntl } from "react-intl";
 import { Heading, Text, Wrapper } from "ui";
+import ResultInfoText from "./ResultInfoText";
+import ResultListItem from "./ResultListItem";
+import CompanyAccess from "./CompanyAccess";
 
 const ResultTable = ({ santaPairName, companyData, companyNames }) => {
  const { formatMessage } = useIntl();
@@ -8,38 +11,40 @@ const ResultTable = ({ santaPairName, companyData, companyNames }) => {
 
  const secretSantaText = formatMessage({ id: "result.sectetSanta" }).replace(
   "XXX",
-  (santaPairName ?? name)
+  santaPairName ?? name
  );
 
  return (
-  <Wrapper>
-   <Heading>{secretSantaText}</Heading>
-   <div>
-    <div style={{ display: "flex", gap: "8px" }}>
-     <Text variant="lg">
-      <FormattedMessage id="result.companyNumber" />
-     </Text>
-     <Text variant="md">{companyData.id}</Text>
-    </div>
-    <div style={{ display: "flex", gap: "8px" }}>
-     <Text variant="lg">
-      <FormattedMessage id="result.companyPassword" />
-     </Text>
-     <Text variant="md">{companyData.password}</Text>
-    </div>
+  <Wrapper maxHeight="60vh" overflow="hidden">
+   <div
+    style={{
+     display: "flex",
+     flexDirection: "column",
+     position: "sticky",
+     top: "0",
+     gap: "16px",
+    }}
+   >
+    <Heading>{secretSantaText}</Heading>
+    <CompanyAccess
+     companyId={companyData.id}
+     companyPassword={companyData.password}
+    />
    </div>
-   <Text variant="lg">
-    <FormattedMessage id="result.participantsList" />
-   </Text>
-   <div>
-    {!!companyNames.length &&
-     companyNames.map((name, index) => (
-      <div key={index} style={{ display: "flex", gap: "8px" }}>
-       <Text variant="lg">{index + 1}</Text>
-       <Text variant="md">{name}</Text>
-      </div>
-     ))}
-   </div>
+   <Wrapper maxHeight="30vh" variant="secondary">
+    <Text variant="lg">
+     <FormattedMessage id="result.participantsList" />
+    </Text>
+    <Wrapper maxHeight="20vh" overflow="scroll" position="relative" fullWidth>
+     <div>
+      {!!companyNames.length &&
+       companyNames.map((name, index) => (
+        <ResultListItem key={index} name={name} index={index} />
+       ))}
+     </div>
+    </Wrapper>
+   </Wrapper>
+   <div style={{ position: "sticky", bottom: "0" }}>HELLO</div>
   </Wrapper>
  );
 };

@@ -1,6 +1,6 @@
 import styles from "./ParticipantsFormFields.module.css";
 import { FormInput } from "components";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { FormattedMessage } from "react-intl";
 import { Button } from "ui";
 
@@ -17,11 +17,15 @@ const ParticipantsFormFields = ({
 
  const contentRef = useRef(null);
 
- const scrollToTop = () => {
+const scrollToBottom = () => {
   if (contentRef.current) {
-   contentRef.current.scrollTop = 0;
+    contentRef.current.scrollTop = contentRef.current.scrollHeight;
   }
- };
+};
+
+useEffect(() => {
+  scrollToBottom();
+}, [contentRef.current?.scrollHeight]);
 
  const handleDelete = (index) => {
   remove(index);
@@ -30,7 +34,6 @@ const ParticipantsFormFields = ({
  const handleAddField = (event) => {
   event.preventDefault();
   append({ name: "" });
-  scrollToTop();
  };
 
  const isError = (index) => {

@@ -14,7 +14,10 @@
 .errorPaper {
     border-radius: var(--primary-border-radius);
     box-shadow: var(--error-shadow);
-    
+}
+
+.secondaryPaper {
+    background-color: rgba(243, 207, 207, 0.833);
 }
 
 @keyframes show {

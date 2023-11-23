@@ -1,19 +1,23 @@
 import styles from "./Paper.module.css";
 
-const Paper = ({ variant, children }) => {
-  const classVariants = {
-    primary: styles.primaryPaper,
-    secondary: styles.secondaryPaper,
-    error: styles.errorPaper,
-  };
+const Paper = ({ variant, children, fullWidth }) => {
+ const classVariants = {
+  primary: styles.primaryPaper,
+  secondary: styles.secondaryPaper,
+  error: styles.errorPaper,
+ };
 
-  const currentClass = classVariants[variant];
+ const currentClass = classVariants[variant];
 
-  return <div className={currentClass}>{children}</div>;
+ return (
+  <div className={currentClass} style={fullWidth && { width: "100%" }}>
+   {children}
+  </div>
+ );
 };
 
 Paper.defaultProps = {
-  variant: "primary",
+ variant: "primary",
 };
 
 export default Paper;

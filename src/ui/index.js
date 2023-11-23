@@ -13,3 +13,4 @@ export { default as LanguageSwitcher } from "./LanguageSwitcher";
 export { default as Wrapper } from "./Wrapper";
 export { default as IconButton } from "./IconButton";
 export { default as DeleteButton } from "./DeleteButton";
+export { default as CopyTextButton } from "./CopyTextButton";

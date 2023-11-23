@@ -1,0 +1,6 @@
+.copyButton {
+ position: absolute;
+ right: 10px;
+ top: 10px;
+ cursor: url('../../assets/img/cursors/pointer-cursor.png'), pointer;
+}
