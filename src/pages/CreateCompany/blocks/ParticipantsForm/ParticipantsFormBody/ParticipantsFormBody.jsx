@@ -3,15 +3,12 @@ import { Heading, Wrapper } from "ui";
 import ParticipantsFormFields from "./ParticipantsFormFields";
 import ParticipantsFormButtons from "./ParticipantsFormButtons";
 import { useFieldArray, useFormContext } from "react-hook-form";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
-const ParticipamtsFormBody = ({
- emptyFieldErrorIndexes,
- setEmtyFieldErrorIndexes,
- pairFieldErrorIndexes,
- ...props
-}) => {
- const { control, getValues } = useFormContext();
+const ParticipamtsFormBody = ({ setIsError, ...props }) => {
+ const [fieldErrorIndexes, setFieldErrorIndexes] = useState([]);
+
+ const { control } = useFormContext();
  const { fields, append, remove } = useFieldArray({
   control,
   name: "names",
@@ -20,23 +17,14 @@ const ParticipamtsFormBody = ({
   },
  });
  const fieldNames = fields.map((_, index) => `names[${index}].name`);
-
+ 
  const fieldParams = {
   fields,
+  fieldNames,
   append,
   remove,
-  emptyFieldErrorIndexes,
-  pairFieldErrorIndexes,
+  fieldErrorIndexes,
  };
-
- const [currentValues, setCurrentValues] = useState(null);
-
- useEffect(() => {
-  setInterval(() => {
-   const values = fieldNames.map((name) => getValues(name));
-   setCurrentValues(values);
-  }, 500);
- });
 
  return (
   <Wrapper maxHeight="60vh" paddingRight="0">
@@ -45,11 +33,12 @@ const ParticipamtsFormBody = ({
      <FormattedMessage id="participantsForm.title" />
     </Heading>
    </div>
-   <ParticipantsFormFields {...fieldParams} currentValues={currentValues}/>
+   <ParticipantsFormFields {...fieldParams} />
    <ParticipantsFormButtons
     {...props}
-    setEmtyFieldErrorIndexes={setEmtyFieldErrorIndexes}
+    setFieldErrorIndexes={setFieldErrorIndexes}
     fieldNames={fieldNames}
+    setIsError={setIsError}
    />
   </Wrapper>
  );

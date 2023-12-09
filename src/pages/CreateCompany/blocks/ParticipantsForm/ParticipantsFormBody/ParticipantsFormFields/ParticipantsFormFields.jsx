@@ -1,6 +1,6 @@
 import styles from "./ParticipantsFormFields.module.css";
 import { FormInput } from "components";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { FormattedMessage } from "react-intl";
 import { Button } from "ui";
 
@@ -8,24 +8,35 @@ const ParticipantsFormFields = ({
  fields,
  append,
  remove,
- emptyFieldErrorIndexes,
- pairFieldErrorIndexes,
- currentValues,
+ fieldErrorIndexes,
+ fieldNames,
 }) => {
  const isShowAddFieldButton = fields.length < 30;
  const disabled = fields.length === 30;
 
  const contentRef = useRef(null);
+ const [isFirstRender, setIsFirstRender] = useState(true)
 
-const scrollToBottom = () => {
+ const scrollToBottom = () => {
   if (contentRef.current) {
-    contentRef.current.scrollTop = contentRef.current.scrollHeight;
+   contentRef.current.scrollTop = contentRef.current.scrollHeight;
   }
-};
+ };
 
-useEffect(() => {
-  scrollToBottom();
-}, [contentRef.current?.scrollHeight]);
+ useEffect(() => {
+  if (contentRef.current) {
+   contentRef.current.scrollTop = 0;
+  }
+ }, []);
+
+ useEffect(() => {
+  if (isFirstRender) {
+   setIsFirstRender(false);
+  } else {
+   scrollToBottom(); // Прокрутить в самый низ при добавлении новых полей
+  }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+ }, [fields.length]); // Используйте fields.length вместо fields
 
  const handleDelete = (index) => {
   remove(index);
@@ -37,16 +48,14 @@ useEffect(() => {
  };
 
  const isError = (index) => {
-  return (
-   emptyFieldErrorIndexes.includes(index) ||
-   pairFieldErrorIndexes.includes(index)
-  );
+  return fieldErrorIndexes.includes(index);
  };
 
  return (
   <div ref={contentRef} className={styles.fields}>
    {fields.map(({ id }, index) => (
     <FormInput
+     fieldNames={fieldNames}
      key={id}
      name={`names[${index}].name`}
      onRemove={() => handleDelete(index)}
@@ -54,7 +63,6 @@ useEffect(() => {
      placeholder="participantsForm.nameInput.placeholder"
      isError={isError(index)}
      index={index}
-     currentValues={currentValues}
     />
    ))}
    {isShowAddFieldButton && (

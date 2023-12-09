@@ -4,6 +4,8 @@
   width: fit-content;
   transform: translate(-50%, -400%);
   left: 50%;
+  z-index: 1;
+  text-align: center;
 }
 
 .error {

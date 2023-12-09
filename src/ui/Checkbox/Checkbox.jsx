@@ -7,7 +7,6 @@ const Checkbox = ({ onChange, labelText }) => {
 
   const handleChange = (event) => {
     onChange?.(event.target.checked);
-    console.log(event.target.checked);
   };
 
   return (

@@ -16,6 +16,9 @@
     "error.duplicateNames": "Кожне імʼя повинно бути унікальним",
     "error.nameNotFound": "Імʼя не знайдено в поточній компанії",
     "error.serverError": "Щось пішло не так. Будь ласка, спробуйте пізніше",
+    "error.loginCompany.numberCompany.input": "Це поле очікує число",
+    "error.loginCompany.company.notFound": "Компанія не знайдена",
+    "error.loginCompany.company.password": "Невірний пароль",
     "participantsForm.title": "Заповніть всі поля іменами учасників",
     "participantsForm.fields.addField": "Додати учасника",
     "participantsForm.nameInput.placeholder": "Введіть унікальне імʼя",
@@ -24,5 +27,13 @@
     "result.sectetSanta": "Ви будете таємним Сантою у XXX",
     "result.participantsList": "Список усіх учасників:",
     "result.companyNumber": "Номер вашої компанії:",
-    "result.companyPassword": "Пароль вашої компанії:"
+    "result.companyPassword": "Пароль вашої компанії:",
+    "result.createNewCompany": "Створити нову компанію",
+    "loginCompany.title": "Введіть данні компанії",
+    "loginCompany.number.placeholder": "Введіть номер компанії",
+    "loginCompany.password.placeholder": "Введіть пароль компанії",
+    "loginCompany.showPassword": "Показати пароль",
+    "loginCompany.hidePassword": "Сховати пароль",
+    "loginCompany.button.next": "Далі",
+    "result.happyNewYear": "З Новим Роком!"
 }

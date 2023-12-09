@@ -11,16 +11,39 @@ const FormInput = ({
  onRemove,
  isError,
  index,
- currentValues,
+ fieldNames,
  ...props
 }) => {
- const { register } = useFormContext();
+ const { getValues, register } = useFormContext();
  const { formatMessage } = useIntl();
+
  const placeholderText = formatMessage({ id: placeholder });
 
  const [currenValue, setCurrentValue] = useState("");
  const [error, setError] = useState(isError);
  const [wasChanged, setWasChanged] = useState(false);
+ const [duplicateValues, setDuplicateValues] = useState([]);
+
+ const values = fieldNames.map((name) => getValues(name));
+
+ const isDuplicateValue = duplicateValues.includes(index);
+
+ const duplicateValuesValidation = (values, setFunction) => {
+  const result = [];
+  for (let i = 0; i < values.length; i++) {
+   for (let j = i + 1; j < values.length; j++) {
+    if (values[j] === values[i]) {
+     result.push(j, i);
+    }
+   }
+  }
+  setFunction(result);
+ };
+
+ useEffect(() => {
+  duplicateValuesValidation(values, setDuplicateValues);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+ }, [currenValue]);
 
  useEffect(() => {
   setError(isError);
@@ -31,15 +54,20 @@ const FormInput = ({
    setError(isError);
   }
 
-  if (currenValue) { //вся проблема тут
+  if (isDuplicateValue) {
+   setError(isError);
+  }
+  if (currenValue && !isDuplicateValue) {
    setError(false);
   }
-//   if (currenValue && !currentValues.includes(currenValue)) { //вся проблема тут
-//    setError(false);
-//   }
-
- }, [wasChanged, currenValue, isError, currentValues]);
-
+ }, [
+  wasChanged,
+  currenValue,
+  isError,
+  duplicateValues,
+  index,
+  isDuplicateValue,
+ ]);
  const handleDelete = () => {
   onRemove?.();
  };

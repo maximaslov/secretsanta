@@ -6,8 +6,9 @@ import { useAppContext } from "contexts";
 
 const ParticipantsFormButtons = ({
  setCurrentStep,
- setEmtyFieldErrorIndexes,
+ setFieldErrorIndexes,
  fieldNames,
+ setIsError,
 }) => {
  const { getValues, trigger } = useFormContext();
  const { showError } = useAppContext();
@@ -21,13 +22,28 @@ const ParticipantsFormButtons = ({
   const values = fieldNames.map((name) => getValues(name));
 
   const emptyIndexes = [];
+  const duplicateNamesIndexes = [];
 
   for (let i = 0; i < values.length; i++) {
    if (values[i] === "") {
     emptyIndexes.push(i);
    }
+   for (let j = i + 1; j < values.length + 1; j++) {
+    if (values[j] === values[i]) {
+     duplicateNamesIndexes.push(i, j);
+    }
+   }
   }
-  setEmtyFieldErrorIndexes(emptyIndexes);
+
+  if (!!emptyIndexes.length || !!duplicateNamesIndexes.length) {
+   if (!!emptyIndexes.length) {
+    setFieldErrorIndexes(emptyIndexes);
+   } else if (!!duplicateNamesIndexes.length) {
+    setFieldErrorIndexes(duplicateNamesIndexes);
+    showError("error.duplicateNames");
+   }
+   setIsError(true);
+  } else setIsError(false);
  };
 
  const handleNextStep = async () => {
@@ -43,9 +59,9 @@ const ParticipantsFormButtons = ({
    <Button variant="secondary" onClick={handleSetFirstStep}>
     <FormattedMessage id="createCompany.button.back" />
    </Button>
-    <Button type="submit" onClick={handleNextStep}>
-     <FormattedMessage id="createCompany.button.next" />
-    </Button>
+   <Button type="submit" onClick={handleNextStep}>
+    <FormattedMessage id="createCompany.button.next" />
+   </Button>
   </div>
  );
 };

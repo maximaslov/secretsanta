@@ -9,31 +9,16 @@ export const AppContext = createContext();
 const MainProvider = ({ children }) => {
  const [currentCompany, setCurrentCompany] = useState(null);
  const [sortedCompany, setSortedCompany] = useState(null);
- const [pairKey, setPairKey] = useState();
- const [pairNameValue, setPairNameValue] = useState(null);
  const [currentCompanyData, setCurrentCompanyData] = useState(null);
 
  const { showError, isError, errorMessage } = useError();
  const navigate = useNavigate()
- const { post, get } = useSantaApi();
+ const { post } = useSantaApi();
 
  useEffect(() => {
   const { santaPairs } = santaGenerator(currentCompany || []);
   setSortedCompany(santaPairs);
  }, [currentCompany]);
-
- useEffect(() => {
-  if (sortedCompany?.size && pairKey) {
-   const { getPairByName } = santaGenerator(currentCompany);
-   const pairByName = getPairByName(pairKey, sortedCompany);
-   if (pairByName) {
-    setPairNameValue(getPairByName(pairByName));
-   } else {
-    showError("error.nameNotFound");
-   }
-  }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
- }, [sortedCompany, pairKey, currentCompany]);
 
  useEffect(() => {
   if (sortedCompany?.size) {

@@ -16,9 +16,11 @@ const IsRegisteredModal = () => {
               <FormattedMessage id="startpage.isRegisteredCompany.button.no" />
             </Button>
           </Link>
+          <Link tabIndex={-1} to="/company-login">
           <Button>
             <FormattedMessage id="startpage.isRegisteredCompany.button.yes" />
           </Button>
+          </Link>
         </div>
       </div>
     </Wrapper>

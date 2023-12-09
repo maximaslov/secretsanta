@@ -2,5 +2,13 @@
  position: absolute;
  right: 10px;
  top: 10px;
- cursor: url('../../assets/img/cursors/pointer-cursor.png'), pointer;
+ cursor: url("../../assets/img/cursors/pointer-cursor.png"), pointer;
+}
+
+.copyButton svg path {
+ transition: all 0.3s ease;
+}
+
+.copyButton:hover svg path {
+ fill: var(--primary-text-color);
 }

@@ -22,6 +22,9 @@ const ParticipantsNumber = ({ participantsNumber, ...props }) => {
 
   const handleInputChange = (value) => {
     let result = value.replace(/\D/g, "");
+    if (isNaN(Number(value))) {
+      showError("error.loginCompany.numberCompany.input");
+     }
     if (result > 30) {
       setInputValue(30);
       showError("error.maxParticipants");

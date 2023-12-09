@@ -1,7 +1,7 @@
 import { useAppContext } from "contexts";
 import { useEffect, useState } from "react";
 import { useIntl } from "react-intl";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import ResultInput from "./ResultInput";
 import ResultTable from "./ResultTable";
 
@@ -10,10 +10,12 @@ const Result = () => {
  const name = localStorage.getItem("name");
 
  const navigate = useNavigate();
+ const { state } = useLocation();
+ const isRegisteredCompany = state && state.isRegisteredCompany;
  const { formatMessage } = useIntl();
  const { showError } = useAppContext();
  const [currentStep, setCurrentStep] = useState(jsonString && name ? 2 : 1);
- const [inputValue, setInputValue] = useState('');
+ const [inputValue, setInputValue] = useState("");
  const [santaPairName, setSantaPairName] = useState(null);
 
  const inputText = formatMessage({ id: "result.nameInput" });
@@ -53,6 +55,7 @@ const Result = () => {
  if (currentStep === 2) {
   return (
    <ResultTable
+    isRegisteredCompany={isRegisteredCompany}
     santaPairName={santaPairName}
     companyData={companyData}
     companyNames={companyNames}

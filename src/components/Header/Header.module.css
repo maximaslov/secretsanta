@@ -3,6 +3,7 @@
   box-shadow: 0px 0px 35px 1px #6f6e6e, inset 0 0 50px #00000080;
   background-color: var(--primary-background-color);
   position: fixed;
+  z-index: 1;
 }
 
 .headerBox {
@@ -58,5 +59,6 @@
 
   .headerMenu {
     padding: 8px 0;
+    padding-left: 12px;
   }
 }

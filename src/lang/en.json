@@ -16,6 +16,9 @@
     "error.duplicateNames": "Each name must be unique",
     "error.nameNotFound": "Name not found in current company",
     "error.serverError": "Something went wrong. Please try later",
+    "error.loginCompany.numberCompany.input": "This field expects a number",
+    "error.loginCompany.company.notFound": "The company is not found",
+    "error.loginCompany.company.password": "Invalid password",
     "participantsForm.title": "Fill in all fields with the names of participants",
     "participantsForm.fields.addField": "Add participant",
     "participantsForm.nameInput.placeholder": "Enter a unique name",
@@ -24,5 +27,13 @@
     "result.sectetSanta": "You will be XXX's secret Santa.",
     "result.participantsList": "List of all participants:",
     "result.companyNumber": "Your company number:",
-    "result.companyPassword": "Your company password:"
+    "result.companyPassword": "Your company password:",
+    "result.createNewCompany": "Create New Company",
+    "loginCompany.title": "Enter company data",
+    "loginCompany.number.placeholder": "Enter the company number",
+    "loginCompany.password.placeholder": "Enter the company password",
+    "loginCompany.showPassword": "Show password",
+    "loginCompany.hidePassword": "Hide password",
+    "loginCompany.button.next": "Next",
+    "result.happyNewYear": "Happy New Year!"
 }

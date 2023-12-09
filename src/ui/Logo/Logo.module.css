@@ -15,6 +15,7 @@
 
 .middleLogo {
   font-size: 36px;
+  cursor: url('../../assets/img/cursors/pointer-cursor.png'), pointer;
 }
 
 .largeLogo {

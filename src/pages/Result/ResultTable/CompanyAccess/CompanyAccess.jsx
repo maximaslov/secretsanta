@@ -12,7 +12,6 @@ const CompanyAccess = ({ companyId, companyPassword }) => {
   id: "result.companyPassword",
  }).concat(" ", companyPassword.toString());
  const dataToCopy = `${companyIdText}\n${companyPasswordText}`;
- console.log(dataToCopy);
 
  return (
   <Wrapper variant="secondary" position="relative">

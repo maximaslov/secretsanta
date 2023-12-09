@@ -44,7 +44,7 @@
   background-color: transparent;
   border: 1px solid var(--primary-background-color) t;
   border-radius: 1px;
-  transition: background-color 0.2s ease;
+  transition: background-color 0.3s ease;
 }
 
 .pseudoLabel:hover::before {

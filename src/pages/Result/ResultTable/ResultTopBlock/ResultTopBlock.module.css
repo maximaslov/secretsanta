@@ -1,0 +1,7 @@
+.resultTopBlock {
+    display: flex;
+     flex-direction: column;
+     position: sticky;
+     top: 0;
+     gap: 16px;
+}

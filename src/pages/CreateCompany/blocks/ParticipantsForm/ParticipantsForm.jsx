@@ -5,36 +5,13 @@ import { useAppContext } from "contexts";
 import { useState } from "react";
 
 const ParticipantsForm = ({ initValues, ...props }) => {
- const { showError, companyRegistration } = useAppContext();
- const [emptyFieldErrorIndexes, setEmtyFieldErrorIndexes] = useState([]);
- const [pairFieldErrorIndexes, setPairFieldErrorIndexes] = useState([]);
-
- const errorsValidation = (data) => {
-  let pairs = [];
-  for (let i = 0; i < data.length; i++) {
-   for (let j = i + 1; j < data.length; j++) {
-    if (data[j].name !== "") {
-     if (data[i].name === data[j].name && !pairs.includes(j)) {
-      pairs.push(j);
-
-      if (!pairs.includes(i)) {
-       pairs.push(i);
-      }
-     }
-    }
-   }
-  }
-
-  if (pairs.length) {
-   showError("error.duplicateNames");
-   setPairFieldErrorIndexes(pairs);
-   return false;
-  } else return true;
- };
+ const { companyRegistration } = useAppContext();
+ const [isError, setIsError] = useState(false);
 
  const handleSubmit = (data) => {
-  console.log("submit");
-  if (errorsValidation(data.names)) {
+  if (!isError) {
+   console.log("submit");
+   console.log(data.names); //видалити перед деплоєм
    companyRegistration(data.names);
   }
  };
@@ -45,12 +22,7 @@ const ParticipantsForm = ({ initValues, ...props }) => {
    onSubmit={handleSubmit}
    schema={participantsFormSchema}
   >
-   <ParticipantsFormBody
-    emptyFieldErrorIndexes={emptyFieldErrorIndexes}
-    setEmtyFieldErrorIndexes={setEmtyFieldErrorIndexes}
-    pairFieldErrorIndexes={pairFieldErrorIndexes}
-    {...props}
-   />
+   <ParticipantsFormBody setIsError={setIsError} {...props} />
   </Form>
  );
 };
