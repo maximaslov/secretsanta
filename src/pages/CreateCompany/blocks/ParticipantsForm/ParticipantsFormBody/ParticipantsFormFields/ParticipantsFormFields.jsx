@@ -1,8 +1,9 @@
 import styles from "./ParticipantsFormFields.module.css";
 import { FormInput } from "components";
-import { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { FormattedMessage } from "react-intl";
 import { Button } from "ui";
+import { handleEvent, onUnnecessaryEnterClick } from "utils/helpers";
 
 const ParticipantsFormFields = ({
  fields,
@@ -15,7 +16,8 @@ const ParticipantsFormFields = ({
  const disabled = fields.length === 30;
 
  const contentRef = useRef(null);
- const [isFirstRender, setIsFirstRender] = useState(true)
+
+ const [isFirstRender, setIsFirstRender] = useState(true);
 
  const scrollToBottom = () => {
   if (contentRef.current) {
@@ -33,17 +35,16 @@ const ParticipantsFormFields = ({
   if (isFirstRender) {
    setIsFirstRender(false);
   } else {
-   scrollToBottom(); // Прокрутить в самый низ при добавлении новых полей
+   scrollToBottom();
   }
   // eslint-disable-next-line react-hooks/exhaustive-deps
- }, [fields.length]); // Используйте fields.length вместо fields
+ }, [fields.length]);
 
  const handleDelete = (index) => {
   remove(index);
  };
 
  const handleAddField = (event) => {
-  event.preventDefault();
   append({ name: "" });
  };
 
@@ -52,7 +53,11 @@ const ParticipantsFormFields = ({
  };
 
  return (
-  <div ref={contentRef} className={styles.fields}>
+  <div
+   ref={contentRef}
+   className={styles.fields}
+   onKeyDown={onUnnecessaryEnterClick}
+  >
    {fields.map(({ id }, index) => (
     <FormInput
      fieldNames={fieldNames}
@@ -66,7 +71,11 @@ const ParticipantsFormFields = ({
     />
    ))}
    {isShowAddFieldButton && (
-    <Button disabled={disabled} variant="secondary" onClick={handleAddField}>
+    <Button
+     disabled={disabled}
+     variant="secondary"
+     {...handleEvent(handleAddField)}
+    >
      <FormattedMessage id="participantsForm.fields.addField" />
     </Button>
    )}

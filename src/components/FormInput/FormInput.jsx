@@ -3,6 +3,7 @@ import { DeleteButton, Input } from "ui";
 import styles from "./FormInput.module.css";
 import { useFormContext } from "react-hook-form";
 import { useEffect, useState } from "react";
+import { useAppContext } from "contexts";
 
 const FormInput = ({
  name,
@@ -15,6 +16,7 @@ const FormInput = ({
  ...props
 }) => {
  const { getValues, register } = useFormContext();
+ const { showError } = useAppContext();
  const { formatMessage } = useIntl();
 
  const placeholderText = formatMessage({ id: placeholder });
@@ -75,9 +77,15 @@ const FormInput = ({
  const { onChange, onBlur, ...registerAttrs } = register(name);
 
  const handleChange = (event) => {
-  setCurrentValue(event.target.value);
-  setWasChanged(true);
-  onChange(event);
+  if (event.target.value.length < 30) {
+   setError(false);
+   setCurrentValue(event.target.value);
+   setWasChanged(true);
+   onChange(event);
+  } else {
+   showError("error.createCompany.nameField.maxLength");
+   setError(true);
+  }
  };
 
  const handleBlur = (event) => {
@@ -92,6 +100,7 @@ const FormInput = ({
    <Input
     {...registerAttrs}
     placeholder={placeholderText}
+    value={currenValue}
     onChange={handleChange}
     onBlur={handleBlur}
     isError={error}

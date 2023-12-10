@@ -2,53 +2,59 @@
 .middleLogo,
 .largeLogo,
 .largeLogoGradient {
-  font-family: "Norican", cursive;
-  font-weight: 600;
-  color: var(--main-focus-visible-color);
-  cursor: url('../../assets/img/cursors/main-cursor.png'), pointer;
-  z-index: 999;
+ font-family: "Norican", cursive;
+ font-weight: 600;
+ color: var(--main-focus-visible-color);
+ cursor: url("../../assets/img/cursors/main-cursor.png"), pointer;
+ z-index: 999;
 }
 
 .smallLogo {
-  font-size: 20px;
+ font-size: 20px;
 }
 
 .middleLogo {
-  font-size: 36px;
-  cursor: url('../../assets/img/cursors/pointer-cursor.png'), pointer;
+ font-size: 36px;
+ cursor: url("../../assets/img/cursors/pointer-cursor.png"), pointer;
+}
+
+.middleLogo:focus-visible {
+ outline-color: var(--main-focus-visible-color);
+ outline-offset: 1px;
+ outline-style: solid;
 }
 
 .largeLogo {
-  font-size: 42px;
+ font-size: 42px;
 }
 
 .largeLogoGradient {
-  font-size: 42px;
-  background: linear-gradient(
-    to right,
-    var(--main-focus-visible-color) 20%,
-    var(--main-accent-color) 40%,
-    var(--main-accent-color) 60%,
-    var(--main-focus-visible-color) 80%
-  );
-  background-size: 200% auto;
-  color: #ffffff !important;
-  -webkit-text-stroke: 0 0 1px black;
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: shine 3s linear infinite;
+ font-size: 42px;
+ background: linear-gradient(
+  to right,
+  var(--main-focus-visible-color) 20%,
+  var(--main-accent-color) 40%,
+  var(--main-accent-color) 60%,
+  var(--main-focus-visible-color) 80%
+ );
+ background-size: 200% auto;
+ color: #ffffff !important;
+ -webkit-text-stroke: 0 0 1px black;
+ background-clip: text;
+ -webkit-background-clip: text;
+ -webkit-text-fill-color: transparent;
+ animation: shine 3s linear infinite;
 }
 
 @keyframes shine {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.15);
-  }
-  100% {
-    transform: scale(1);
-    background-position: 200% center;
-  }
+ 0% {
+  transform: scale(1);
+ }
+ 50% {
+  transform: scale(1.15);
+ }
+ 100% {
+  transform: scale(1);
+  background-position: 200% center;
+ }
 }

@@ -3,3 +3,4 @@ export { default as getShuffledArray } from "./getShuffledArray";
 export { default as santaGenerator } from "./santaGenerator";
 export { default as passwordGenerator } from "./passwordGenerator";
 export { default as setTextToBoofer } from "./setTextToBoofer";
+export { default as onUnnecessaryEnterClick } from "./onUnnecessaryEnterClick";

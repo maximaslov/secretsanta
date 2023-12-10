@@ -3,6 +3,7 @@ import { participantsFormSchema } from "./participantsFormSchema";
 import ParticipantsFormBody from "./ParticipantsFormBody";
 import { useAppContext } from "contexts";
 import { useState } from "react";
+import { handleEvent } from "utils/helpers";
 
 const ParticipantsForm = ({ initValues, ...props }) => {
  const { companyRegistration } = useAppContext();
@@ -22,7 +23,11 @@ const ParticipantsForm = ({ initValues, ...props }) => {
    onSubmit={handleSubmit}
    schema={participantsFormSchema}
   >
-   <ParticipantsFormBody setIsError={setIsError} {...props} />
+   <ParticipantsFormBody
+    setIsError={setIsError}
+    {...handleEvent(handleSubmit)}
+    {...props}
+   />
   </Form>
  );
 };

@@ -3,7 +3,8 @@ import { useSantaApi } from "queries";
 import { useEffect, useState } from "react";
 import { FormattedMessage, useIntl } from "react-intl";
 import { useNavigate } from "react-router-dom";
-import { Button, Checkbox, Heading, Input, Wrapper } from "ui";
+import { Checkbox, Heading, Input, Wrapper } from "ui";
+import CompanyLoginButtons from "./CompanyLoginButtons";
 
 const CompanyLogin = () => {
  const { formatMessage } = useIntl();
@@ -26,7 +27,7 @@ const CompanyLogin = () => {
    localStorage.setItem("reloadFlag", "false");
    navigate("/");
   }
-  
+
   window.addEventListener("unload", handleBeforeUnload);
 
   return () => {
@@ -61,28 +62,44 @@ const CompanyLogin = () => {
   id: "loginCompany.password.placeholder",
  });
 
+ const isShowFieldsError = () => {
+  if (!companyNumberValue && !companyPasswordValue) {
+   showError("error.loginCompany.company.emptyFields");
+   return true;
+  }
+  if (!companyNumberValue) {
+   showError("error.loginCompany.company.emptyNumberField");
+   return true;
+  }
+  if (!companyPasswordValue) {
+   showError("error.loginCompany.company.emptyPasswordField");
+   return true;
+  }
+ };
+
  const handleButtonClick = () => {
-  get(companyNumberValue)
-   .then((response) => {
-    if (response.password === companyPasswordValue) {
-     setIsInvalidPassword(false);
-     console.log("Пароль вірний");
-     localStorage.setItem("company", JSON.stringify(response));
-     navigate("/company-result", { state: { isRegisteredCompany: true } });
-    } else {
-     showError("error.loginCompany.company.password");
-     setIsInvalidPassword(true);
-    }
-   })
-   .catch((error) => {
-    if (error.response.status === 404) {
-     showError("error.serverError");
-    }
-    if (error.response.status === 500) {
-     showError("error.loginCompany.company.notFound");
-    }
-    console.log(error);
-   });
+  if (!isShowFieldsError()) {
+   get(companyNumberValue)
+    .then((response) => {
+     if (response.password === companyPasswordValue) {
+      setIsInvalidPassword(false);
+      localStorage.setItem("company", JSON.stringify(response));
+      navigate("/company-result", { state: { isRegisteredCompany: true } });
+     } else {
+      showError("error.loginCompany.company.password");
+      setIsInvalidPassword(true);
+     }
+    })
+    .catch((error) => {
+     if (error.response.status === 404) {
+      showError("error.serverError");
+     }
+     if (error.response.status === 500) {
+      showError("error.loginCompany.company.notFound");
+     }
+     console.log(error);
+    });
+  }
  };
 
  return (
@@ -110,11 +127,7 @@ const CompanyLogin = () => {
     onChange={() => setShowPassword(!isShowPassword)}
     labelText={labelText}
    />
-   <div style={{ display: "flex", justifyContent: "flex-end" }}>
-    <Button onClick={handleButtonClick}>
-     <FormattedMessage id="loginCompany.button.next" />
-    </Button>
-   </div>
+   <CompanyLoginButtons onClick={handleButtonClick} />
   </Wrapper>
  );
 };

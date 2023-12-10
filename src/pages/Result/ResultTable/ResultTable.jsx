@@ -1,10 +1,10 @@
 import { FormattedMessage, useIntl } from "react-intl";
 import { CopyTextButton, Heading, Text, Wrapper } from "ui";
 import ResultListItem from "./ResultListItem";
-import CompanyAccess from "./CompanyAccess";
 import CreateNewCompanyButton from "./CreateNewCompanyButton";
 import { namesArrayToStringList } from "./helpers";
 import ResultTopBlock from "./ResultTopBlock/ResultTopBlock";
+import { useEffect, useState } from "react";
 
 const ResultTable = ({
  santaPairName,
@@ -25,21 +25,45 @@ const ResultTable = ({
  let companyListToCopy = namesArrayToStringList(companyNames);
 
  const dataToCopy = `${titleForCopy}\n\n${companyListToCopy}`;
+ const [maxMainHeight, setMaxMainHeight] = useState('65vh');
+ const [maxListHeight, setMaxListHeight] = useState('30vh');
+
+  const handleResize = () => {
+    const windowHeight = window.innerHeight;
+  
+    if (windowHeight < 825) {
+      setMaxMainHeight('none');
+      setMaxListHeight('none');
+    } else {
+      setMaxMainHeight('65vh');
+      setMaxListHeight('30vh');
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener('resize', handleResize);
+    handleResize();
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
 
  return (
-  <Wrapper maxHeight="63vh" overflow="hidden">
+  <Wrapper maxHeight={maxMainHeight} overflow="hidden">
    <ResultTopBlock
     secretSantaText={secretSantaText}
     isRegisteredCompany={isRegisteredCompany}
     companyData={companyData}
    />
    {!isRegisteredCompany && (
-    <Wrapper maxHeight="30vh" variant="secondary" position="relative">
+    <Wrapper maxHeight={maxListHeight} variant="secondary" position="relative">
      {!!companyNames.length && <CopyTextButton copyText={dataToCopy} />}
-     <Text variant="lg">
+     <Text variant="lg">    
       <FormattedMessage id="result.participantsList" />
      </Text>
-     <Wrapper maxHeight="20vh" overflow="scroll" position="relative" fullWidth>
+     <Wrapper maxHeight="20vh" minHeight="100px" overflow="scroll" position="relative" fullWidth>
       <div>
        {!!companyNames.length &&
         companyNames.map((name, index) => (

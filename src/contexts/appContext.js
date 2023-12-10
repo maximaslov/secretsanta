@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
 import { passwordGenerator, santaGenerator } from "utils/helpers";
-import { useSantaApi } from "queries";
+import { getRegionFromIP, useSantaApi } from "queries";
 import { useError } from "utils/hooks";
 import { useNavigate } from "react-router-dom";
 
@@ -10,10 +10,13 @@ const MainProvider = ({ children }) => {
  const [currentCompany, setCurrentCompany] = useState(null);
  const [sortedCompany, setSortedCompany] = useState(null);
  const [currentCompanyData, setCurrentCompanyData] = useState(null);
+ const isRussiaRegion = getRegionFromIP() === "RU";
 
  const { showError, isError, errorMessage } = useError();
- const navigate = useNavigate()
+ const navigate = useNavigate();
  const { post } = useSantaApi();
+
+ getRegionFromIP();
 
  useEffect(() => {
   const { santaPairs } = santaGenerator(currentCompany || []);
@@ -27,17 +30,17 @@ const MainProvider = ({ children }) => {
    const companyData = {
     company: currentCompany,
     pairs: mapData,
-    password: passwordGenerator()
+    password: passwordGenerator(),
    };
 
    const fetchData = async () => {
     try {
      const result = await post(companyData);
-     setCurrentCompanyData(result)
-     localStorage.setItem('company', JSON.stringify(result))
-     navigate('/company-result')
+     setCurrentCompanyData(result);
+     localStorage.setItem("company", JSON.stringify(result));
+     navigate("/company-result");
     } catch (error) {
-     showError('error.serverError')
+     showError("error.serverError");
     }
    };
 
@@ -57,6 +60,7 @@ const MainProvider = ({ children }) => {
   errorMessage,
   companyRegistration,
   currentCompanyData,
+  isRussiaRegion,
  };
 
  return <AppContext.Provider value={value}>{children}</AppContext.Provider>;
