@@ -1,80 +1,111 @@
 .modalBackground {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  background-color: rgba(0, 0, 0, 0.238);
-  backdrop-filter: blur(24px);
-  padding-top: 60px;
-  animation: showBg 0.5s linear;
+ position: absolute;
+ width: 100%;
+ height: 100%;
+ display: flex;
+ justify-content: center;
+ background-color: rgba(0, 0, 0, 0.238);
+ backdrop-filter: blur(24px);
+ padding-top: 60px;
+ animation: showBg 0.5s linear;
+ z-index: 999;
+}
+
+.hideModalBackground {
+ animation: hideBg 0.5s linear;
 }
 
 .modalWrapper {
-  max-width: 900px;
-  width: 100%;
-  height: fit-content;
-  animation: showModal 0.3s ease;
-  position: relative;
-  padding: 0 16px;
-  overflow: hidden;
+ width: 100%;
+ max-width: 900px;
+ height: fit-content;
+ animation: showModal 0.3s ease;
+ position: relative;
+ padding: 0 16px;
+ overflow: hidden;
+}
+
+.hideModalWrapper {
+ animation: hideModal 0.5s ease;
 }
 
 .contentWrapper {
-  overflow: auto;
-  max-height: 75vh;
-  padding: 0 36px;
+ overflow: auto;
+ max-height: 75vh;
+ padding: 0 36px;
 }
 
 .closeIcon {
-  top: 16px;
-  right: 32px;
-  cursor: pointer;
-  position: absolute;
-  border: none;
-  background: none;
+ top: 16px;
+ right: 32px;
+ position: absolute;
+ border: none;
+ background: none;
+ cursor: url("../../assets/img/cursors/pointer-cursor.png"), pointer;
+}
+
+.closeIcon:focus-visible {
+ outline-color: var(--main-focus-visible-color);
+ outline-style: solid;
 }
 
 .closeIcon svg path {
-  stroke: var(--button-primary-bg);
-  transition: stroke 0.3s ease;
+ stroke: var(--button-primary-bg);
+ transition: stroke 0.3s ease;
 }
 
 .closeIcon:hover svg path {
-  stroke: var(--button-primary-hover-bg);
+ stroke: var(--button-primary-hover-bg);
 }
 
 .closeIcon svg {
-  transition: all 0.3s ease;
+ transition: all 0.3s ease;
 }
 
 .closeIcon:hover svg {
-  transform: scale(1.1);
+ transform: scale(1.1);
 }
 
 .closeIcon:active svg {
-  transform: scale(1);
+ transform: scale(1);
 }
 
 .additionalPadding {
-  width: 100%;
-  height: 36px;
+ width: 100%;
+ height: 36px;
 }
 
 @keyframes showBg {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
+ 0% {
+  opacity: 0;
+ }
+ 100% {
+  opacity: 1;
+ }
 }
 
 @keyframes showModal {
-  0% {
-    transform: translate(0, -100%) scale(0);
-  }
-  100% {
-    transform: translate(0, 0) scale(1);
-  }
+ 0% {
+  transform: translate(0, -100%) scale(0);
+ }
+ 100% {
+  transform: translate(0, 0) scale(1);
+ }
+}
+@keyframes hideBg {
+ 0% {
+  opacity: 1;
+ }
+ 100% {
+  opacity: 0;
+ }
+}
+
+@keyframes hideModal {
+ 0% {
+  transform: translate(0, 0) scale(1);
+ }
+ 100% {
+  transform: translate(0, -100%) scale(0);
+ }
 }

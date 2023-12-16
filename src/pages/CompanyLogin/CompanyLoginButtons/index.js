@@ -1,1 +1,1 @@
-export {default } from './CompanyLoginButtons'
+export { default } from "./CompanyLoginButtons";

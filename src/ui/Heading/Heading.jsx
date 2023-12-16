@@ -1,10 +1,10 @@
-const Heading = ({ children, props }) => {
+const Heading = ({ children, props, left, right }) => {
   return (
     <h4
       style={{
         color: "var(--primary-text-color)",
         fontSize: "var(--heading-font-size)",
-        textAlign: "center",
+        textAlign: left ? "left" : right ? "right" : "center",
       }}
       {...props}
     >

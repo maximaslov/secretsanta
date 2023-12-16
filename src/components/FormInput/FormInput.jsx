@@ -21,7 +21,7 @@ const FormInput = ({
 
  const placeholderText = formatMessage({ id: placeholder });
 
- const [currenValue, setCurrentValue] = useState("");
+ const [currenValue, setCurrentValue] = useState(getValues(name));
  const [error, setError] = useState(isError);
  const [wasChanged, setWasChanged] = useState(false);
  const [duplicateValues, setDuplicateValues] = useState([]);

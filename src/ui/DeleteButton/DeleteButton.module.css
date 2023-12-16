@@ -1,11 +1,20 @@
 .deleteButton {
-  height: fit-content;
+ height: fit-content;
 }
 
 .deleteButton:hover div svg path:nth-child(1) {
-  fill: var(--main-error-color);
+ fill: var(--main-error-color);
 }
 
 .deleteButton:hover div svg path:nth-child(2) {
-  fill: rgb(181, 3, 3);
+ fill: rgb(181, 3, 3);
+}
+
+@media (hover: none) {
+ .deleteButton:hover div svg path:nth-child(1) {
+  fill: rgba(215, 215, 215, 0.929);
+ }
+ .deleteButton:hover div svg path:nth-child(2) {
+  fill: rgba(215, 215, 215, 0.929);
+ }
 }

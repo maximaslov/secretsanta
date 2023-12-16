@@ -28,6 +28,7 @@
     "participantsForm.nameInput.placeholder": "Enter a unique name",
     "result.nameInput": "Enter your name",
     "result.button.next": "Become a secret Santa",
+    "result.button.back": "Back",
     "result.sectetSanta": "You will be XXX's secret Santa",
     "result.participantsList": "List of all participants:",
     "result.companyNumber": "Your company number:",

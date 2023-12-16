@@ -4,11 +4,12 @@ import { useIntl } from "react-intl";
 import { useLocation, useNavigate } from "react-router-dom";
 import ResultInput from "./ResultInput";
 import ResultTable from "./ResultTable";
+import { useSantaApi } from "queries";
 
 const Result = () => {
  const jsonString = localStorage.getItem("company");
  const name = localStorage.getItem("name");
-
+ const { del } = useSantaApi();
  const navigate = useNavigate();
  const { state } = useLocation();
  const isRegisteredCompany = state && state.isRegisteredCompany;
@@ -23,7 +24,7 @@ const Result = () => {
 
  const companyNames = companyData?.company;
 
- const handleButtonClick = () => {
+ const handleNextClick = () => {
   if (!companyNames.includes(inputValue)) {
    showError("error.nameNotFound");
   } else {
@@ -33,6 +34,12 @@ const Result = () => {
    localStorage.setItem("name", pairName);
    setCurrentStep(2);
   }
+ };
+
+ const handleBackClick = () => {
+    localStorage.removeItem("company");
+    del(companyData.id);
+    navigate('/create-company', { state: { isBackStep: true } })
  };
 
  useEffect(() => {
@@ -45,9 +52,10 @@ const Result = () => {
   return (
    <ResultInput
     value={inputValue}
-    onClick={handleButtonClick}
+    next={handleNextClick}
     onChange={setInputValue}
     placeholder={inputText}
+    back={handleBackClick}
    />
   );
  }

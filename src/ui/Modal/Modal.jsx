@@ -1,18 +1,27 @@
 import { Close } from "components/icons";
 import styles from "./Modal.module.css";
 import { Paper } from "ui";
+import { useState } from "react";
 
-const Modal = ({ children, onCLose }) => {
+const Modal = ({ children, onClose }) => {
+  const [isClosing, setIsClosing] =  useState();
+
+  const backgroundClass = `${styles.modalBackground} ${isClosing ? styles.hideModalBackground : ''}`;
+  const wrapperClass = `${styles.modalWrapper} ${isClosing ? styles.hideModalWrapper : ''}`;
+
   const handleClick = () => {
-    onCLose?.();
+    setIsClosing(true);
+    setTimeout(() => {
+      onClose?.();
+    }, 500)
   };
 
   return (
-    <div className={styles.modalBackground}>
-      <div className={styles.modalWrapper}>
-        <Paper>
+    <div className={backgroundClass}>
+      <div className={wrapperClass}>
+        <Paper fullWidth>
           <div className={styles.additionalPadding}>
-            <button className={styles.closeIcon} onClick={handleClick}>
+            <button className={styles.closeIcon} onClick={handleClick} tabIndex={0}>
               <Close />
             </button>
           </div>

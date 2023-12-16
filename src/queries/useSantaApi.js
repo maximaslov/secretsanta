@@ -13,5 +13,10 @@ export const useSantaApi = () => {
   return response.data;
  };
 
- return { post, get };
+ const del = async (companyId) => {
+    const response = await axios.delete(URL + companyId);
+    return response.data;
+ }
+
+ return { post, get, del };
 };

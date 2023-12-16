@@ -1,13 +1,17 @@
 import { useEffect, useState } from "react";
 import { ParticipantsForm, ParticipantsNumber } from "./blocks";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
+import { useAppContext } from "contexts";
 
 const CreateCompany = () => {
  const navigate = useNavigate();
+ const { state } = useLocation();
+ const isBackStep = state && state.isBackStep;
+ const { savedValues } = useAppContext();
  localStorage.removeItem("name");
  localStorage.removeItem("company");
  const [currentStep, setCurrentStep] = useState(1);
- const [initValues, setInitValues] = useState({});
+ const [initValues, setInitValues] = useState();
  const [participantsNumber, setPartcipiantsNumber] = useState("");
 
  const params = {
@@ -19,6 +23,13 @@ const CreateCompany = () => {
  };
 
  useEffect(() => {
+  if (isBackStep) {
+   setInitValues({ names: savedValues });
+   setCurrentStep(2);
+  }
+ }, [isBackStep, setCurrentStep, savedValues]);
+
+ useEffect(() => {
   const handleBeforeUnload = (event) => {
    localStorage.setItem("reloadFlag", "true");
    event.preventDefault();
@@ -28,7 +39,7 @@ const CreateCompany = () => {
    localStorage.setItem("reloadFlag", "false");
    navigate("/");
   }
-  
+
   window.addEventListener("unload", handleBeforeUnload);
 
   return () => {

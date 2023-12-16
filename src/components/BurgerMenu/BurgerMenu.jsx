@@ -12,7 +12,6 @@ const BurgerMenu = ({ list }) => {
 
  const handleOutsideClick = (event) => {
   if (menuRef.current && !menuRef.current.contains(event.target)) {
-   // Clicked outside the menu, close it
    setIsOpen(false);
   }
  };
