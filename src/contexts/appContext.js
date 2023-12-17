@@ -4,6 +4,7 @@ import { getRegionFromIP, useSantaApi } from "queries";
 import { useError } from "utils/hooks";
 import { useNavigate } from "react-router-dom";
 import { DeveloperModal } from "components";
+import InstructionsModal from "components/InstructionsModal";
 
 export const AppContext = createContext();
 
@@ -15,10 +16,9 @@ const MainProvider = ({ children }) => {
  const [currentModalValue, setCurrentModalValue] = useState(null);
  const [isShowModal, setShowModal] = useState(false);
 
- console.log(isShowModal);
-
  const modals = {
   developer: DeveloperModal,
+  instructions: InstructionsModal,
  };
  const CurrentModal = modals[currentModalValue];
 

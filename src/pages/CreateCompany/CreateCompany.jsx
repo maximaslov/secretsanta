@@ -20,6 +20,7 @@ const CreateCompany = () => {
   setInitValues,
   setPartcipiantsNumber,
   participantsNumber,
+  isBackStep,
  };
 
  useEffect(() => {

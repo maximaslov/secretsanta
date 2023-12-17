@@ -9,6 +9,7 @@ const ParticipantsFormButtons = ({
  setFieldErrorIndexes,
  fieldNames,
  setIsError,
+ isBackStep,
 }) => {
  const { getValues, trigger } = useFormContext();
  const { showError } = useAppContext();
@@ -56,9 +57,11 @@ const ParticipantsFormButtons = ({
 
  return (
   <div className={styles.buttonsWrapper}>
-   <Button variant="secondary" onClick={handleSetFirstStep}>
-    <FormattedMessage id="createCompany.button.back" />
-   </Button>
+   {!isBackStep && (
+    <Button variant="secondary" onClick={handleSetFirstStep}>
+     <FormattedMessage id="createCompany.button.back" />
+    </Button>
+   )}
    <Button type="submit" onClick={handleNextStep}>
     <FormattedMessage id="createCompany.button.next" />
    </Button>

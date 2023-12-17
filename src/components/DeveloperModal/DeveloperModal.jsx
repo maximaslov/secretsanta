@@ -1,58 +1,35 @@
 import { Heading, Modal, Text } from "ui";
-import developer from "../../assets/img/photos/developer.jpg";
+import styles from "./DevelopmentModal.module.css";
+import { FormattedMessage } from "react-intl";
+import { textItems } from "./developerModalDefinitions";
+import DeveloperImage from "./DeveloperImage";
+import DeveloperLinks from "./DeveloperLinks";
 
 const DeveloperModal = ({ onClose }) => {
  return (
   <Modal onClose={onClose}>
-   <div style={{ display: "flex", gap: "32px" }}>
-    <div
-     style={{
-      display: "flex",
-      maxWidth: "300px",
-      width: "100%",
-      minWidth: "250px",
-      overflow: "hidden",
-      borderRadius: "4px",
-      height: "fit-content",
-     }}
-    >
-     <img
-      src={developer}
-      alt="Maksym Maslov"
-      style={{ width: "100%", objectFit: "fill" }}
-     />
-    </div>
+   <div className={styles.container}>
+    <DeveloperImage />
     <div>
-     <Heading left>Максим Маслов</Heading>
-     <Text variant="md" bold>
-      Frontend Developer
-     </Text>
-     <div style={{ marginTop: "16px" }}>
-      <Text variant="md">
-       Привіт і ласкаво прошу на сайт мого веб додатку Таємний Санта! :)
+     <div className={styles.developerText}>
+      <Heading left>
+       <FormattedMessage id="developer.name" />
+      </Heading>
+      <Text variant="md" bold>
+       Frontend Developer
       </Text>
-      <br />
-      <Text variant="md">
-       Дуже сподіваюся, що мені вдалося погрузити тебе в атмосферу Нового Року і
-       ти задоволений моїм дизайном та інтуїтивно зрозумілим інтерфейсом. Бажаю
-       веселих свят та приємних вражень від обміну подарунками!
-      </Text>
-      <br />
-      <Text variant="lg" bold>
-       Коротко про мене:
-      </Text>
-      <Text variant="lg">
-       Я займаюся розробкою з початку 2022 року. Окрім роботи, це стало і моїм
-       основним хобі, посунувши на задній план музику і фотографію.
-      </Text>
-      <br />
-      <Text variant="lg" bold>
-       Технології з якими я працюю:
-      </Text>
-      <Text variant="lg">
-       React.js, React Native, Next.js, Redux Toolkit, RTK Query, React Hook
-       Form, Styled Components, Styled System, та інші.
-      </Text>
+     </div>
+     <br />
+     <div>
+      {textItems.map(({ variant, textId, withSpace, attrs }, index) => (
+       <div key={index}>
+        <Text variant={variant} {...attrs}>
+         <FormattedMessage id={textId} />
+        </Text>
+        {withSpace && <br />}
+       </div>
+      ))}
+      <DeveloperLinks />
      </div>
     </div>
    </div>

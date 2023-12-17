@@ -1,0 +1,22 @@
+.links {
+ display: flex;
+ gap: 8px;
+ justify-content: flex-end;
+}
+
+.link:hover div svg path:nth-child(1) {
+ fill: var(--button-primary-hover-bg);
+}
+
+.link:hover div svg path:nth-child(2) {
+ fill: var(--button-primary-hover-bg);
+}
+
+@media (hover: none) {
+ .link:hover div svg path:nth-child(1) {
+  fill: var(--primary-text-color);
+ }
+ .link:hover div svg path:nth-child(2) {
+  fill: var(--primary-text-color);
+ }
+}

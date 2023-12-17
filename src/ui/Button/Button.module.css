@@ -1,67 +1,78 @@
 .primaryButton {
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
-  cursor: url('../../assets/img/cursors/pointer-cursor.png'), pointer;
-  padding: 9px 16px;
-  color: var(--button-primary-text);
-  background-color: var(--button-primary-bg);
-  border: var(--button-primary-border);
-  border: none;
-  font-size: var(--ui-font-size);
-  border-radius: var(--button-border-radius);
-  width: fit-content;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
+ cursor: url("../../assets/img/cursors/pointer-cursor.png"), pointer;
+ padding: 9px 16px;
+ color: var(--button-primary-text);
+ background-color: var(--button-primary-bg);
+ border: var(--button-primary-border);
+ font-size: var(--ui-font-size);
+ border-radius: var(--button-border-radius);
+ width: fit-content;
 }
 
 .primaryButton:hover,
 .primaryButton:focus-visible {
-  outline: none;
-  box-shadow: var(--button-primary-hover-shadow);
-  background-color: var(--button-primary-hover-bg);
+ outline: none;
+ box-shadow: var(--button-primary-hover-shadow);
+ background-color: var(--button-primary-hover-bg);
 }
 
 .primaryButton:active,
 .primaryButton:focus-visible:active {
-  box-shadow: var(--button-primary-active-shadow);
+ box-shadow: var(--button-primary-active-shadow);
 }
 
-
 .secondaryButton {
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
-  cursor: url('../../assets/img/cursors/pointer-cursor.png'), pointer;
-  padding: 8px 16px;
-  color: var(--button-secondary-text);
-  background-color: var(--button-secondary-bg);
-  border: var(--button-secondary-border);
-  font-size: var(--button-fontSize);
-  border-radius: var(--button-border-radius);
-  min-height: 37px;
-  width: fit-content;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
+ cursor: url("../../assets/img/cursors/pointer-cursor.png"), pointer;
+ padding: 8px 16px;
+ color: var(--button-secondary-text);
+ background-color: var(--button-secondary-bg);
+ border: var(--button-secondary-border);
+ font-size: var(--button-fontSize);
+ border-radius: var(--button-border-radius);
+ min-height: 37px;
+ width: fit-content;
 }
 
 .secondaryButton:hover,
 .secondaryButton:focus-visible {
-  outline: none;
-  box-shadow: var(--button-secondary-hover-shadow);
-  background-color: var(--button-secondary-hover-bg);
-  color: var(--button-secondary-hover-text);
+ outline: none;
+ box-shadow: var(--button-secondary-hover-shadow);
+ background-color: var(--button-secondary-hover-bg);
+ color: var(--button-secondary-hover-text);
 }
 
 .secondaryButton:active,
 .secondaryButton:focus-visible:active {
-  box-shadow: var(--button-secondary-active-shadow);
+ box-shadow: var(--button-secondary-active-shadow);
 }
 
 .primaryButton:disabled,
 .secondaryButton:disabled {
-  background-color: var(--button-disabled-bg);
-  color: var(--button-disabled-color);
-  box-shadow: none;
-  cursor: not-allowed;
+ background-color: var(--button-disabled-bg);
+ color: var(--button-disabled-color);
+ box-shadow: none;
+ cursor: not-allowed;
 }
 
 .primaryButton:focus-visible,
 .secondaryButton:focus-visible {
-  outline-color: var(--main-focus-visible-color);
-  outline-width: 1px;
-  outline-style: solid;
-  outline-offset: -1px;
+ outline-color: var(--main-focus-visible-color);
+ outline-width: 1px;
+ outline-style: solid;
+ outline-offset: -1px;
+}
+
+@media (hover: none) {
+ .primaryButton:hover {
+  color: var(--button-primary-text);
+  background-color: var(--button-primary-bg);
+  border: var(--button-primary-border);
+ }
+ .secondaryButton:hover {
+  color: var(--button-secondary-text);
+  background-color: var(--button-secondary-bg);
+  border: var(--button-secondary-border);
+ }
 }

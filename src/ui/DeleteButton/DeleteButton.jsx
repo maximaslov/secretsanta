@@ -8,7 +8,7 @@ const DeleteButton = ({ onClick }) => {
   };
   return (
     <div className={styles.deleteButton}>
-      <IconButton Iconcomponent={Delete} onClick={handleClick} />
+      <IconButton IconComponent={Delete} onClick={handleClick} />
     </div>
   );
 };

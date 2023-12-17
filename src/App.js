@@ -34,11 +34,6 @@ function App() {
        <Route path="/create-company" element={<CreateCompany />} />
        <Route path="/company-result" element={<Result />} />
        <Route path="/company-login" element={<CompanyLogin />} />
-       {/* <Route path="" element={<CurrentCompany />} /> */}
-
-       {/* <Route path="/instuction" element={<Instruction />}/>  */}
-       {/* <Route path="/developer" element={<Developer />}/>  */}
-       {/* <Route path="/support-ukraine" element={<MonobankPage />}/>  */}
       </Routes>
      </MainLayout>
     </MainProvider>

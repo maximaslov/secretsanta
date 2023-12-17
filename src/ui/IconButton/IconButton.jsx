@@ -1,7 +1,7 @@
 import { handleEvent } from "utils/helpers";
 import styles from "./IconButton.module.css";
 
-const IconButton = ({ Iconcomponent, children, disabled, onClick }) => {
+const IconButton = ({ IconComponent, text, disabled, onClick }) => {
   const currentWrapperClass = disabled
     ? styles.iconButtonDisabled
     : styles.iconButton;
@@ -13,12 +13,12 @@ const IconButton = ({ Iconcomponent, children, disabled, onClick }) => {
   return (
     <div
       className={currentWrapperClass}
-      style={children && { gap: "8px" }}
+      style={text && { gap: "8px" }}
       tabIndex={0}
       {...handleEvent(handleClick)}
     >
-      <Iconcomponent />
-      <p className={styles.iconButtonText}>{children}</p>
+      <IconComponent />
+      <p className={styles.iconButtonText}>{text}</p>
     </div>
   );
 };

@@ -1,11 +1,11 @@
-const Text = ({ children, variant, bold }) => {
+const Text = ({ children, variant, bold, color }) => {
  const stylesVariant = {
   md: {
-   color: "var(--secondary-text-color)",
+   color: color ?? "var(--secondary-text-color)",
    fontSize: "var(--description-font-size)",
   },
   lg: {
-   color: "var(--primary-text-color)",
+   color: color ?? "var(--primary-text-color)",
    fontSize: "var(--main-font-size)",
   },
  };

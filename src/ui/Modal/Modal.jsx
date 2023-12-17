@@ -17,7 +17,7 @@ const Modal = ({ children, onClose }) => {
   };
 
   return (
-    <div className={backgroundClass}>
+    <div onClick={handleClick} className={backgroundClass}>
       <div className={wrapperClass}>
         <Paper fullWidth>
           <div className={styles.additionalPadding}>
