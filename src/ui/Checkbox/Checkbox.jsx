@@ -1,7 +1,6 @@
 import { useRef } from "react";
 import Text from "../Text";
 import styles from "./Checkbox.module.css";
-import { handleEvent } from "utils/helpers";
 
 const Checkbox = ({ onChange, labelText }) => {
  const labelRef = useRef();
