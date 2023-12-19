@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./App.css";
-import { HashRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { MainProvider } from "contexts";
 import { DynamicDocumentTitle, MainLayout } from "components";
 import { IntlProvider } from "react-intl";
@@ -24,7 +24,7 @@ function App() {
  if (showLoader) return <Loader />;
 
  return (
-  <HashRouter>
+  <BrowserRouter>
    <IntlProvider locale={currentLanguage} messages={translations}>
     <MainProvider>
      <DynamicDocumentTitle />
@@ -38,7 +38,7 @@ function App() {
      </MainLayout>
     </MainProvider>
    </IntlProvider>
-  </HashRouter>
+  </BrowserRouter>
  );
 }
 

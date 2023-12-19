@@ -1,7 +1,6 @@
 {
   "name": "secret-santa",
   "version": "0.1.0",
-  "homepage": "https://maximaslov.github.io/secretsanta",
   "private": true,
   "dependencies": {
     "@hookform/resolvers": "^3.3.2",

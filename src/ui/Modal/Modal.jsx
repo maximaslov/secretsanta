@@ -18,7 +18,7 @@ const Modal = ({ children, onClose }) => {
 
   return (
     <div onClick={handleClick} className={backgroundClass}>
-      <div className={wrapperClass}>
+      <div onClick={e => e.stopPropagation()}className={wrapperClass}>
         <Paper fullWidth>
           <div className={styles.additionalPadding}>
             <button className={styles.closeIcon} onClick={handleClick} tabIndex={0}>

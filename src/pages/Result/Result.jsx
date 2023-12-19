@@ -9,7 +9,7 @@ import { useSantaApi } from "queries";
 const Result = () => {
  const jsonString = localStorage.getItem("company");
  const name = localStorage.getItem("name");
- const { del } = useSantaApi();
+ const { del, put } = useSantaApi();
  const navigate = useNavigate();
  const { state } = useLocation();
  const isRegisteredCompany = state && state.isRegisteredCompany;
@@ -25,21 +25,22 @@ const Result = () => {
  const companyNames = companyData?.company;
 
  const handleNextClick = () => {
+   const pairs = new Map(companyData.pairs);
+ const pairName = pairs.get(inputValue);
   if (!companyNames.includes(inputValue)) {
    showError("error.nameNotFound");
   } else {
-   const pairs = new Map(companyData.pairs);
-   const pairName = pairs.get(inputValue);
    setSantaPairName(pairName);
    localStorage.setItem("name", pairName);
    setCurrentStep(2);
+   put(companyData.id, { ...companyData, isSantas: { [inputValue]: true } });
   }
  };
 
  const handleBackClick = () => {
-    localStorage.removeItem("company");
-    del(companyData.id);
-    navigate('/create-company', { state: { isBackStep: true } })
+  localStorage.removeItem("company");
+  del(companyData.id);
+  navigate("/create-company", { state: { isBackStep: true } });
  };
 
  useEffect(() => {
