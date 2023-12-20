@@ -98,7 +98,6 @@ const CompanyLogin = () => {
      if (error.response.status === 500) {
       showError("error.loginCompany.company.notFound");
      }
-     console.log(error);
     });
   }
  };

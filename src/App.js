@@ -10,8 +10,8 @@ import { BeginPage, CreateCompany, Result } from "pages";
 import CompanyLogin from "pages/CompanyLogin";
 
 //mockapi.io
-//e-mail: secretsanta2023app@gmail.com
-//password: SecretSanta2023App
+//e-mail: secretsanta2024app@gmail.com
+//password: SecretSanta2024App
 
 function App() {
  const [showLoader, setShowLoader] = useState(true);

@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const URL = "https://6394a82986829c49e8236d0d.mockapi.io/secretsanta/";
+const URL = "https://65834ef34d1ee97c6bcdcecc.mockapi.io/secretsanta/";
 
 export const useSantaApi = () => {
  const post = async (company) => {
