@@ -15,6 +15,7 @@ const MainProvider = ({ children }) => {
  const [savedValues, setSavedValues] = useState(null);
  const [currentModalValue, setCurrentModalValue] = useState(null);
  const [isShowModal, setShowModal] = useState(false);
+ const [updatedCompanyData, setUpdatedCompanyData] = useState(null)
 
  const modals = {
   developer: DeveloperModal,
@@ -67,7 +68,6 @@ const MainProvider = ({ children }) => {
  }, [sortedCompany]);
 
  const companyRegistration = (data) => {
-  console.log(data);
   const names = data.map((item) => item.name);
   setCurrentCompany(names);
   setSavedValues(data);
@@ -86,6 +86,8 @@ const MainProvider = ({ children }) => {
   isShowModal,
   CurrentModal,
   setShowModal,
+  updatedCompanyData,
+  setUpdatedCompanyData,
  };
 
  return <AppContext.Provider value={value}>{children}</AppContext.Provider>;

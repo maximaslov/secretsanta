@@ -26,7 +26,8 @@
 .headerMenuItems {
  display: flex;
  justify-content: space-between;
- width: 500px;
+ /* width: 500px;  if donate menu item*/ 
+ width: 300px;
  margin-top: 6px;
 }
 

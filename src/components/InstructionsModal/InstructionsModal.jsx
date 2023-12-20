@@ -6,7 +6,7 @@ const InstructionsModal = ({ onClose }) => {
  return (
   <Modal onClose={onClose}>
    {textItems.map(({ isHeading, textId, withSpace, attrs }) => (
-    <div>
+    <div key={textId}>
      {isHeading ? (
       <Heading>
        <FormattedMessage id={textId} />

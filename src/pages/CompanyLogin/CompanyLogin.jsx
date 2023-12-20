@@ -8,7 +8,7 @@ import CompanyLoginButtons from "./CompanyLoginButtons";
 
 const CompanyLogin = () => {
  const { formatMessage } = useIntl();
- const { showError } = useAppContext();
+ const { showError, setUpdatedCompanyData } = useAppContext();
  const { get } = useSantaApi();
  const navigate = useNavigate();
 
@@ -83,6 +83,7 @@ const CompanyLogin = () => {
     .then((response) => {
      if (response.password === companyPasswordValue) {
       setIsInvalidPassword(false);
+      setUpdatedCompanyData(response)
       localStorage.setItem("company", JSON.stringify(response));
       navigate("/company-result", { state: { isRegisteredCompany: true } });
      } else {

@@ -11,8 +11,6 @@ const ParticipantsForm = ({ initValues, ...props }) => {
 
  const handleSubmit = (data) => {
   if (!isError) {
-   console.log("submit");
-   console.log(data.names); //видалити перед деплоєм
    companyRegistration(data.names);
   }
  };

@@ -17,6 +17,7 @@
  "error.duplicateNames": "Each name must be unique",
  "error.nameNotFound": "Name not found in current company",
  "error.serverError": "Something went wrong. Please try later",
+ "error.alreadySanta": "A participant with this name has already used the service in the current company",
  "error.loginCompany.numberCompany.input": "This field expects a number",
  "error.loginCompany.company.notFound": "The company is not found",
  "error.loginCompany.company.emptyNumberField": "Enter a company number",
@@ -70,5 +71,6 @@
   "instructions.notification.5": "5. The service has additional user action and data entry checks, practically reducing the chances of making a mistake to zero.",
   "instructions.notification.6": "6. All company data is stored in the local storage of the registrar's browser and is always available at the /company-result link, even if you close the tab or restart your device.",
   "instructions.notification.warning": "Note! When you go to the stage of creating a new company, data from the previous company is deleted from the local storage of your browser and will no longer be available for display.",
+  "notation.name": "Attention! You should enter only your name. The service does not allow entering the same name within one company.",
   "instructions.happyNewYear": "HAPPY NEW YEAR!"
 }

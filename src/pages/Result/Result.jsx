@@ -14,7 +14,8 @@ const Result = () => {
  const { state } = useLocation();
  const isRegisteredCompany = state && state.isRegisteredCompany;
  const { formatMessage } = useIntl();
- const { showError } = useAppContext();
+ const { showError, updatedCompanyData } =
+  useAppContext();
  const [currentStep, setCurrentStep] = useState(jsonString && name ? 2 : 1);
  const [inputValue, setInputValue] = useState("");
  const [santaPairName, setSantaPairName] = useState(null);
@@ -24,16 +25,26 @@ const Result = () => {
 
  const companyNames = companyData?.company;
 
+ const isError = updatedCompanyData?.isSantas[inputValue];
+
  const handleNextClick = () => {
-   const pairs = new Map(companyData.pairs);
- const pairName = pairs.get(inputValue);
+  const pairs = new Map(companyData.pairs);
+  const pairName = pairs.get(inputValue);
   if (!companyNames.includes(inputValue)) {
    showError("error.nameNotFound");
+  } else if (isError) {
+   showError("error.allreadySanta");
   } else {
    setSantaPairName(pairName);
    localStorage.setItem("name", pairName);
    setCurrentStep(2);
-   put(companyData.id, { ...companyData, isSantas: { [inputValue]: true } });
+   put(companyData.id, {
+    ...companyData,
+    isSantas: {
+     ...companyData.isSantas,
+     [inputValue]: true,
+    },
+   });
   }
  };
 
@@ -57,6 +68,7 @@ const Result = () => {
     onChange={setInputValue}
     placeholder={inputText}
     back={handleBackClick}
+    isError={isError}
    />
   );
  }
