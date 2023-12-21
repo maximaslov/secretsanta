@@ -19,7 +19,7 @@
   margin: 0 auto;
   display: flex;
   justify-content: center;
-  overflow: auto;
+  overflow: hidden;
 }
 
 .container::-webkit-scrollbar {
