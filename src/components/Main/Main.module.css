@@ -9,6 +9,7 @@
   height: 100vh;
   margin-top: 83px;
   align-items: center;
+  overflow: hidden;
 }
 
 .container {
