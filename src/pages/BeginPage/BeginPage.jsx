@@ -12,6 +12,8 @@ const BeginPage = () => {
 
   const isBegining = !firstStep;
 
+  console.log({isBegining});
+
   if (isBegining) {
     return (
       <div className={styles.startButton}>

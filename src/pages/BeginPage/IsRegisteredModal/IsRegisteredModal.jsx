@@ -1,9 +1,10 @@
 import styles from "./IsRegisteredModal.module.css";
 import { FormattedMessage } from "react-intl";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Button, Heading, Wrapper } from "ui";
 
 const IsRegisteredModal = () => {
+  const navigate = useNavigate();
   return (
     <Wrapper>
       <div className={styles.firstStepWrapper}>
@@ -12,7 +13,7 @@ const IsRegisteredModal = () => {
         </Heading>
         <div className={styles.firsStepButtons}>
           <Link tabIndex={-1} to="/create-company">
-            <Button variant="secondary">
+            <Button variant="secondary" onClick={() => navigate('/create-company')}>
               <FormattedMessage id="startpage.isRegisteredCompany.button.no" />
             </Button>
           </Link>
