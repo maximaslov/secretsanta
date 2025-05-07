@@ -1,7 +1,6 @@
 ![logo](./src/assets/img/logo/logo.png)
 
 # About
-# Secret Santa 🎁
 
 **Secret Santa** is a web application for anonymous gift exchange during the Christmas holidays.  
 It requires no registration or personal data from participants.
