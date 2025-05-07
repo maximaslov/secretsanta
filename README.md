@@ -16,7 +16,7 @@ There is **no encryption** when transmitting data to the server, so anyone famil
 
 ---
 
-## 🛠 Technologies Used
+## 🛠 Tech Stack
 
 - **Library:** [React](https://reactjs.org/)
 - **Programming Language:** [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
