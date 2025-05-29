@@ -2,7 +2,7 @@
 
 # About
 
-**Secret Santa** is a web application for anonymous gift exchange during the Christmas holidays.  
+**[Secret Santa](https://secret-santa.in.ua)** is a web application for anonymous gift exchange during the Christmas holidays.  
 It requires no registration or personal data from participants.
 
 ⚠️ **Note:** This application is designed for regular users without web development skills.  
